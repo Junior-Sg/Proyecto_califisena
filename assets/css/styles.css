@@ -1,0 +1,172 @@
+/* === ESTILOS GENERALES === */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f8f3;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* === CONTENEDORES === */
+.login-container,
+.calificar-container,
+.perfil-container {
+  width: 90%;
+  max-width: 700px;
+  background-color: #ffffff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === TITULOS INTERNOS === */
+h1, h2, h3 {
+  color: #064c29;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* === FORMULARIOS === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #cdd5cb;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #0c6c3c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(12, 108, 60, 0.4);
+}
+
+button,
+.btn {
+  background-color: #0c6c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #097038;
+  transform: scale(1.03);
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* === TABLAS === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table th {
+  background-color: #0c6c3c;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:nth-child(even) {
+  background-color: #f4f9f5;
+}
+
+/* === BOTONES SECUNDARIOS === */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.actions a {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  background-color: #0c6c3c;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.actions a:hover {
+  background-color: #065c32;
+}
+
+/* === ALERTAS Y MENSAJES === */
+.alert-success {
+  background-color: #e5f7e9;
+  color: #155724;
+  padding: 12px;
+  border-left: 5px solid #0c6c3c;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.alert-error {
+  background-color: #fbeaea;
+  color: #721c24;
+  padding: 12px;
+  border-left: 5px solid #b71c1c;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* === LOGIN === */
+.login-container {
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #064c29;
+}
+
+.login-container input {
+  text-align: center;
+}
+
+.login-container button {
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* === PIE DE PÁGINA === */
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #777;
+  font-size: 13px;
+}
