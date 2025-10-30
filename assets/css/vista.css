@@ -1,0 +1,116 @@
+/* ======== ESTILOS GENERALES - CALIFISENA ======== */
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f8f3;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #064c29;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calificar-container,
+.perfil-container {
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === FORMULARIOS === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid #cdd5cb;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  border-color: #0c6c3c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(12, 108, 60, 0.4);
+}
+
+/* === BOTONES === */
+button, .btn {
+  background-color: #0c6c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #097038;
+  transform: scale(1.03);
+}
+
+/* === TABLAS === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #0c6c3c;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f9f5;
+}
+
+/* === ALERTAS === */
+.alert-success {
+  background-color: #e5f7e9;
+  color: #155724;
+  padding: 12px;
+  border-left: 5px solid #0c6c3c;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.alert-error {
+  background-color: #fbeaea;
+  color: #721c24;
+  padding: 12px;
+  border-left: 5px solid #b71c1c;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #777;
+}

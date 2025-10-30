@@ -1,4 +1,5 @@
-/* ======== ESTILOS GENERALES ======== */
+/* ======== LOGIN ANIMADO - CALIFISENA ======== */
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -35,7 +36,6 @@ body {
   backdrop-filter: blur(10px);
   width: 80%;
   max-width: 400px;
-  /* EFECTO 2: Interacción sutil al hover */
   transition: all 0.3s ease;
 }
 
@@ -51,12 +51,9 @@ h1 {
   font-weight: 700;
 }
 
-/* ======== FORMULARIO ======== */
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
   gap: 20px;
 }
 
@@ -76,11 +73,6 @@ input:focus {
   transform: translateY(-2px);
 }
 
-input::placeholder {
-  color: #064c29;
-  opacity: 0.7;
-}
-
 button {
   background-color: #0c6c3c;
   border: none;
@@ -91,7 +83,6 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
-  margin-top: 10px;
 }
 
 button:hover {
@@ -119,31 +110,23 @@ button:hover {
   transform: rotate(45deg);
   border-radius: 15px;
   animation: float 12s infinite ease-in-out;
-  /* EFECTO 1: Profundidad en los rombos */
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  transition: all 0.5s ease;
 }
 
-/* Colores actualizados */
-.rh1 { background: #4f46e5; top: 10%; left: -5%; animation-delay: 0s; }     /* Azul vibrante */
-.rh2 { background: #8b5cf6; top: 40%; left: 20%; animation-delay: 2s; }     /* Morado medio */
-.rh3 { background: #10b981; top: 70%; left: -10%; animation-delay: 4s; }    /* Verde esmeralda */
-.rh4 { background: #f59e0b; top: 20%; left: 60%; animation-delay: 6s; }     /* Amarillo dorado */
-.rh5 { background: #6366f1; top: 80%; left: 50%; animation-delay: 8s; }     /* Azul lavanda */
+.rh1 { background: #4f46e5; top: 10%; left: -5%; animation-delay: 0s; }
+.rh2 { background: #8b5cf6; top: 40%; left: 20%; animation-delay: 2s; }
+.rh3 { background: #10b981; top: 70%; left: -10%; animation-delay: 4s; }
+.rh4 { background: #f59e0b; top: 20%; left: 60%; animation-delay: 6s; }
+.rh5 { background: #6366f1; top: 80%; left: 50%; animation-delay: 8s; }
 
-/* Animación suave, en bucle */
 @keyframes float {
-  0% {
+  0%, 100% {
     transform: rotate(45deg) translateY(0px);
     opacity: 0.7;
   }
   50% {
     transform: rotate(45deg) translateY(-40px);
     opacity: 1;
-  }
-  100% {
-    transform: rotate(45deg) translateY(0px);
-    opacity: 0.7;
   }
 }
 
@@ -154,75 +137,23 @@ button:hover {
   align-items: center;
   justify-content: center;
   background-color: #fff3cc;
-  padding: 0;
-  overflow: hidden;
-}
-
-.event-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .event-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
 }
 
-/* ======== RESPONSIVIDAD ======== */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .login-section, .event-section {
-    flex: 1;
-    width: 100%;
-  }
-
-  .event-section {
-    height: 50vh;
-    order: -1;
-  }
-
-  .login-content {
-    margin: 40px 0;
-    padding: 30px 25px;
-  }
-
-  .rhombus {
-    width: 100px;
-    height: 100px;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-} 
-/* ======== TÍTULO BIENVENIDA ======== */
+/* ======== BIENVENIDA ======== */
 .welcome-title {
   font-size: 1.8em;
   color: #0c6c3c;
   margin-bottom: 10px;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  position: relative;
-  display: inline-block;
 }
 
-.welcome-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #0c6c3c, #10b981, #0c6c3c);
-  border-radius: 2px;
+@media (max-width: 900px) {
+  .container { flex-direction: column; height: auto; }
+  .event-section { height: 50vh; order: -1; }
 }
