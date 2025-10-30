@@ -4,7 +4,7 @@ if (!isset($_SESSION["id_evaluador"])) {
     header("Location: login.php");
     exit;
 }
-
+// hola 
 require_once "../Config/database.php";
 require_once "../Models/Proyecto.php";
 

@@ -7,20 +7,18 @@ class Evaluador {
         $this->conn = $db;
     }
 
+    // ✅ Versión para contraseñas sin encriptar
     public function verificarLogin($usuario, $contrasena) {
-        $query = "SELECT * FROM {$this->table} WHERE usuario = :usuario";
+        $query = "SELECT * FROM {$this->table} WHERE usuario = :usuario AND contrasena_hash = :contrasena";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":usuario", $usuario);
+        $stmt->bindParam(":contrasena", $contrasena);
         $stmt->execute();
-        $evaluador = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($evaluador && $evaluador['contrasena_hash'] == $contrasena) {
-            return $evaluador;
-        }
-        return false;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
 ?>
+
 
 
 
