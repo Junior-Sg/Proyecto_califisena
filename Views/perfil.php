@@ -51,6 +51,8 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
         <th>ID</th>
         <th>Proyecto</th>
         <th>Regional</th>
+        <!-- para definir el cambio que pidieron el si es poster, stan o ponencia  -->
+        <th>Tipo proyecto</th>
         <th>Centro de Formación</th>
         <th>Estado</th>
         <th>Acción</th>
@@ -64,6 +66,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
           <td><?php echo htmlspecialchars($p["regional"]); ?></td>
           <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
           <td>
+          
           <?php if ($p["calificado"]): ?>
               <span style="color:green; font-weight:bold;">✅ Calificado</span>
             <?php else: ?>
