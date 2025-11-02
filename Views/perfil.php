@@ -18,7 +18,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
   <meta charset="UTF-8">
   <title>Perfil del Evaluador - SENA</title>
   <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/vista.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
