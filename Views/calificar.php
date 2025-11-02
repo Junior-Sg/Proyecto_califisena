@@ -17,7 +17,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
 <head>
   <meta charset="UTF-8">
   <title>Calificar Proyecto - SENA</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/calificar.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -31,7 +31,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
         <i class="fa-solid fa-user"></i>
       </a>
       <div>
-        <h1>Calificación de Proyectos</h1>
+        <h1 class="perfil">Calificación de Proyectos</h1>
         <p>Bienvenido, <strong><?php echo htmlspecialchars($_SESSION["nombre"]); ?></strong></p>
       </div>
     </div>
@@ -58,13 +58,20 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
       <input type="number" name="introduccion" placeholder="Introducción (10)" min="0" max="10" required>
       <input type="number" name="planteamiento_problema" placeholder="Planteamiento del problema (15)" min="0" max="15" required>
       <input type="number" name="objetivos" placeholder="Objetivos (10)" min="0" max="10" required>
+      <!-- //Nuevo campo de seleccion de estado -->
+      <label for="estado_proyecto">Estado del proyecto</label>
+      <select name="estado_proyecto" id="estado_proyecto" require>
+        <option value="">Seleccione el estado del proyecto</option>
+        <option value="Aprobado">En curso</option>
+        <option value="Rechazado">Terminado</option>
+      </select>
 
       <button type="submit">Guardar Calificación</button>
     </form>
 
     <div class="actions">
       <a href="perfil.php" class="btn">Ver Perfil</a>
-      <a href="exportar_excel.php?id_evaluador=<?php echo $_SESSION['id_evaluador']; ?>" class="btn">Exportar a Excel</a>
+      <!-- <a href="exportar_excel.php?id_evaluador=<?php echo $_SESSION['id_evaluador']; ?>" class="btn">Exportar a Excel</a> -->
     </div>
   </div>
 

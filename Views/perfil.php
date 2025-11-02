@@ -17,8 +17,8 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
 <head>
   <meta charset="UTF-8">
   <title>Perfil del Evaluador - SENA</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -31,7 +31,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
         <i class="fa-solid fa-user"></i>
       </a>
       <div>
-        <h1>Perfil del Evaluador</h1>
+        <h1 class="titulo-perfil">Perfil del Evaluador</h1>
         <p>Bienvenido, <strong><?php echo htmlspecialchars($_SESSION["nombre"]); ?></strong></p>
       </div>
     </div>
@@ -64,12 +64,14 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
           <td><?php echo htmlspecialchars($p["regional"]); ?></td>
           <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
           <td>
-            <?php if ($p["calificado"]): ?>
+          <?php if ($p["calificado"]): ?>
               <span style="color:green; font-weight:bold;">✅ Calificado</span>
             <?php else: ?>
               <span style="color:#b22222; font-weight:bold;">⛔ Pendiente</span>
             <?php endif; ?>
-          </td>
+
+  </form>
+</td>
           <td>
             <?php if (!$p["calificado"]): ?>
               <a href="calificar.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" class="btn">Calificar</a>

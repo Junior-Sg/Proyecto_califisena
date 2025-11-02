@@ -20,11 +20,20 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
+.titulo-perfil {
+  font-size: 28px;
+  color: #fcfdfc; 
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 /* === TITULOS INTERNOS === */
 h1, h2, h3 {
   color: #064c29;
   text-align: center;
   margin-bottom: 20px;
+
 }
 
 /* === FORMULARIOS === */
