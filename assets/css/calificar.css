@@ -1,7 +1,13 @@
 /* === ESTILO GENERAL === */
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #f4f1ea, #ebe6da);
+  background: 
+     linear-gradient(135deg, rgba(249, 248, 243, 0.35)), 
+    url("../img/Fondo1.png"); 
+  background-size: cover;     
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; 
   color: #2e2e2e;
   margin: 0;
   padding: 0;
@@ -12,6 +18,7 @@ body {
   max-width: 720px;
   margin: 110px auto 60px;
   background: #fffefb;
+  backdrop-filter: blur(6px);
   border-radius: 20px;
   padding: 40px 50px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
