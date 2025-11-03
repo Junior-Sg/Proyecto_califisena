@@ -6,15 +6,15 @@ class Proyecto {
         $this->conn = $db;
     }
 
-    // esta funcion es para caalificar porque es mas fachero asi
+    // 🔹 Proyectos pendientes de calificar (para calificar.php)
     public function listarPorEvaluador($id_evaluador) {
         $query = "
             SELECT 
                 p.id_proyecto, 
                 p.nombre_proyecto, 
+                p.tipo_participacion,
                 p.regional, 
                 p.centro_formacion,
-                p.estado, 
                 a.id_asignacion
             FROM asignaciones a
             INNER JOIN proyectos p ON a.id_proyecto = p.id_proyecto
@@ -28,12 +28,13 @@ class Proyecto {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    //  esta funcion es para perfil porque si no pregunten 
+    // 🔹 Todos los proyectos asignados (para perfil.php)
     public function listarTodosPorEvaluador($id_evaluador) {
         $query = "
             SELECT 
                 p.id_proyecto,
                 p.nombre_proyecto,
+                p.tipo_participacion,
                 p.regional,
                 p.centro_formacion,
                 a.id_asignacion,
@@ -51,4 +52,6 @@ class Proyecto {
     }
 }
 ?>
+
+
 

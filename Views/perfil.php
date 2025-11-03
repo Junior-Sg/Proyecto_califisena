@@ -36,6 +36,9 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
       </div>
     </div>
     <div class="header-right">
+      <?php if ($_SESSION["id_evaluador"] == 76): ?>
+        <a href="admin/index.php" class="btn" style="background-color:#0c6c3c;">🛠 Módulo Admin</a>
+      <?php endif; ?>
       <button class="logout-btn" onclick="confirmarLogout()">Cerrar Sesión</button>
     </div>
   </header>
@@ -50,6 +53,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
       <tr>
         <th>ID</th>
         <th>Proyecto</th>
+        <th>Tipo Participación</th>
         <th>Regional</th>
         <th>Centro de Formación</th>
         <th>Estado</th>
@@ -57,35 +61,38 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
         <th>Exportar</th>
       </tr>
 
-      <?php foreach ($proyectos as $p): ?>
-        <tr>
-          <td><?php echo $p["id_proyecto"]; ?></td>
-          <td><?php echo htmlspecialchars($p["nombre_proyecto"]); ?></td>
-          <td><?php echo htmlspecialchars($p["regional"]); ?></td>
-          <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
-          <td>
-          <?php if ($p["calificado"]): ?>
-              <span style="color:green; font-weight:bold;">✅ Calificado</span>
-            <?php else: ?>
-              <span style="color:#b22222; font-weight:bold;">⛔ Pendiente</span>
-            <?php endif; ?>
-
-  </form>
-</td>
-          <td>
-            <?php if (!$p["calificado"]): ?>
-              <a href="calificar.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" class="btn">Calificar</a>
-            <?php else: ?>
-              <button class="btn" style="background-color:#888; cursor:not-allowed;" disabled>Calificado</button>
-            <?php endif; ?>
-          </td>
-          <td>
-            <a href="exportar_excel.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
-              <i class="fa-solid fa-file-excel" style="color:#1d6f42; font-size:20px;"></i>
-            </a>
-          </td>
-        </tr>
-      <?php endforeach; ?>
+      <?php if (!empty($proyectos)): ?>
+        <?php foreach ($proyectos as $p): ?>
+          <tr>
+            <td><?php echo $p["id_proyecto"]; ?></td>
+            <td><?php echo htmlspecialchars($p["nombre_proyecto"]); ?></td>
+            <td><?php echo htmlspecialchars($p["tipo_participacion"]); ?></td>
+            <td><?php echo htmlspecialchars($p["regional"]); ?></td>
+            <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
+            <td>
+              <?php if (!empty($p["calificado"])): ?>
+                <span style="color:green; font-weight:bold;">✅ Calificado</span>
+              <?php else: ?>
+                <span style="color:#b22222; font-weight:bold;">⛔ Pendiente</span>
+              <?php endif; ?>
+            </td>
+            <td>
+              <?php if (empty($p["calificado"])): ?>
+                <a href="calificar.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" class="btn">Calificar</a>
+              <?php else: ?>
+                <button class="btn" style="background-color:#888; cursor:not-allowed;" disabled>Calificado</button>
+              <?php endif; ?>
+            </td>
+            <td>
+              <a href="exportar_excel.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
+                <i class="fa-solid fa-file-excel" style="color:#1d6f42; font-size:20px;"></i>
+              </a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <tr><td colspan="8">No hay proyectos asignados.</td></tr>
+      <?php endif; ?>
     </table>
 
     <div class="actions">
@@ -115,6 +122,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
 
 </body>
 </html>
+
 
 
 
