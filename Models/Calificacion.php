@@ -9,10 +9,38 @@ class Calificacion {
 
     public function guardar($data) {
         $query = "INSERT INTO {$this->table} 
-                 (id_asignacion, dominio_tematico, formato_poster, creatividad_diseno, introduccion, 
-                  planteamiento_problema, objetivos, total, fecha_calificacion)
-                  VALUES (:id_asignacion, :dominio_tematico, :formato_poster, :creatividad_diseno, 
-                          :introduccion, :planteamiento_problema, :objetivos, :total, NOW())";
+            (
+                id_asignacion, 
+                dominio_tematico, 
+                formato_poster, 
+                creatividad_diseno, 
+                introduccion, 
+                planteamiento_problema, 
+                objetivos, 
+                referente_teorico,
+                metodologia,
+                resultados,
+                bibliografia,
+                total, 
+                estado,
+                fecha_calificacion
+            ) 
+            VALUES (
+                :id_asignacion, 
+                :dominio_tematico, 
+                :formato_poster, 
+                :creatividad_diseno, 
+                :introduccion, 
+                :planteamiento_problema, 
+                :objetivos, 
+                :referente_teorico,
+                :metodologia,
+                :resultados,
+                :bibliografia,
+                :total, 
+                :estado,
+                NOW()
+            )";
 
         $stmt = $this->conn->prepare($query);
 
@@ -24,11 +52,17 @@ class Calificacion {
             ":introduccion" => $data["introduccion"],
             ":planteamiento_problema" => $data["planteamiento_problema"],
             ":objetivos" => $data["objetivos"],
-            ":total" => $data["total"]
+            ":referente_teorico" => $data["referente_teorico"],
+            ":metodologia" => $data["metodologia"],
+            ":resultados" => $data["resultados"],
+            ":bibliografia" => $data["bibliografia"],
+            ":total" => $data["total"],
+            ":estado" => $data["estado"]
         ]);
     }
 }
 ?>
+
 
 
 

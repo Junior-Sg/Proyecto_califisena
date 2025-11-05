@@ -24,7 +24,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
 </head>
 <body>
 
-  <!-- encabezado de header.php -->
+  <!-- Encabezado -->
   <header class="main-header">
     <div class="header-left">
       <a href="perfil.php" class="profile-circle" title="Ver Perfil">
@@ -42,28 +42,38 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
 
   <div class="calificar-container">
     <form method="POST" action="../Controllers/CalificacionController.php">
-      <label for="id_proyecto">Proyecto:</label>
+
+      <!-- Selección del proyecto -->
+      <label for="id_asignacion">Proyecto:</label>
       <select name="id_asignacion" id="id_asignacion" required>
         <option value="">Seleccione...</option>
         <?php foreach ($proyectos as $p): ?>
           <option value="<?php echo $p['id_asignacion']; ?>">
-            <?php echo $p['nombre_proyecto'] . " - Estado: " . $p['estado']; ?>
+            <?php echo $p['nombre_proyecto'] . " (" . $p['tipo_participacion'] . ") - " . $p['regional']; ?>
           </option>
         <?php endforeach; ?>
       </select>
 
-      <input type="number" name="dominio_tematico" placeholder="Dominio temático (10)" min="0" max="10" required>
-      <input type="number" name="formato_poster" placeholder="Formato del póster (10)" min="0" max="10" required>
-      <input type="number" name="creatividad_diseno" placeholder="Creatividad y diseño (5)" min="0" max="5" required>
-      <input type="number" name="introduccion" placeholder="Introducción (10)" min="0" max="10" required>
-      <input type="number" name="planteamiento_problema" placeholder="Planteamiento del problema (15)" min="0" max="15" required>
-      <input type="number" name="objetivos" placeholder="Objetivos (10)" min="0" max="10" required>
-      <!-- //Nuevo campo de seleccion de estado -->
-      <label for="estado_proyecto">Estado del proyecto</label>
-      <select name="estado_proyecto" id="estado_proyecto" require>
-        <option value="">Seleccione el estado del proyecto</option>
-        <option value="Aprobado">En curso</option>
-        <option value="Rechazado">Terminado</option>
+      <!-- Campos de calificación -->
+      <input type="number" name="dominio_tematico" placeholder="Dominio temático (máx. 10)" min="0" max="10" required>
+      <input type="number" name="formato_poster" placeholder="Formato del póster (máx. 10)" min="0" max="10" required>
+      <input type="number" name="creatividad_diseno" placeholder="Creatividad y diseño (máx. 5)" min="0" max="5" required>
+      <input type="number" name="introduccion" placeholder="Introducción (máx. 10)" min="0" max="10" required>
+      <input type="number" name="planteamiento_problema" placeholder="Planteamiento del problema (máx. 15)" min="0" max="15" required>
+      <input type="number" name="objetivos" placeholder="Objetivos (máx. 10)" min="0" max="10" required>
+
+      <!-- Nuevos campos -->
+      <input type="number" name="referente_teorico" placeholder="Referente teórico (máx. 5)" min="0" max="5" required>
+      <input type="number" name="metodologia" placeholder="Metodología (máx. 15)" min="0" max="15" required>
+      <input type="number" name="resultados" placeholder="Resultados (máx. 15)" min="0" max="15" required>
+      <input type="number" name="bibliografia" placeholder="Bibliografía (máx. 5)" min="0" max="5" required>
+
+      <!-- Estado -->
+      <label for="estado_proyecto">Estado del Proyecto:</label>
+      <select name="estado_proyecto" id="estado_proyecto" required>
+        <option value="">Seleccione el estado</option>
+        <option value="En curso">En curso</option>
+        <option value="Finalizado">Finalizado</option>
       </select>
 
       <button type="submit">Guardar Calificación</button>
@@ -71,7 +81,6 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
 
     <div class="actions">
       <a href="perfil.php" class="btn">Ver Perfil</a>
-      <!-- <a href="exportar_excel.php?id_evaluador=<?php echo $_SESSION['id_evaluador']; ?>" class="btn">Exportar a Excel</a> -->
     </div>
   </div>
 
@@ -96,5 +105,6 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
 
 </body>
 </html>
+
 
 

@@ -36,6 +36,9 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
       </div>
     </div>
     <div class="header-right">
+      <?php if ($_SESSION["id_evaluador"] == 76): ?>
+        <a href="admin/index.php" class="btn" style="background-color:#0c6c3c;">🛠 Módulo Admin</a>
+      <?php endif; ?>
       <button class="logout-btn" onclick="confirmarLogout()">Cerrar Sesión</button>
     </div>
   </header>
@@ -50,6 +53,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
       <tr>
         <th>ID</th>
         <th>Proyecto</th>
+        <th>Tipo Participación</th>
         <th>Regional</th>
         <!-- para definir el cambio que pidieron el si es poster, stan o ponencia  -->
         <th>Tipo proyecto</th>
@@ -66,7 +70,6 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
           <td><?php echo htmlspecialchars($p["regional"]); ?></td>
           <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
           <td>
-          
           <?php if ($p["calificado"]): ?>
               <span style="color:green; font-weight:bold;">✅ Calificado</span>
             <?php else: ?>
@@ -118,6 +121,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
 
 </body>
 </html>
+
 
 
 
