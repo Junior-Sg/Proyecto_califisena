@@ -2,11 +2,11 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: 
-    linear-gradient(135deg,rgba(249, 248, 243, 0.15)),
+  background:
+    linear-gradient(135deg, rgba(249, 248, 243, 0.15)),
     url("../img/calificacion.png");
-  background-size: cover;      
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
@@ -20,17 +20,17 @@ body {
 .perfil-container {
   width: 90%;
   max-width: 700px;
-  background-color: rgba(255, 255, 255, 0.95); 
+  background-color: rgba(255, 255, 255, 0.95);
   margin: 40px auto;
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px); 
+  backdrop-filter: blur(6px);
 }
 
 .titulo-perfil {
   font-size: 28px;
-  color: #fcfdfc; 
+  color: #fcfdfc;
   margin: 0;
   font-weight: 700;
   letter-spacing: 1px;
@@ -43,18 +43,6 @@ h1, h2, h3 {
   margin-bottom: 20px;
 }
 
-.calificar-container,
-.perfil-container {
-  width: 90%;
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.95);
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
-}
-
 /* === FORMULARIOS === */
 form {
   display: flex;
@@ -62,15 +50,17 @@ form {
   gap: 12px;
 }
 
-input, select {
+input, select, textarea {
   padding: 10px 12px;
   border: 1px solid #cdd5cb;
   border-radius: 6px;
   font-size: 15px;
   transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
   border-color: #0c6c3c;
   outline: none;
   box-shadow: 0 0 5px rgba(12, 108, 60, 0.4);
@@ -87,6 +77,8 @@ button, .btn {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.1s ease;
   text-decoration: none;
+  width: fit-content;
+  align-self: center;
 }
 
 button:hover, .btn:hover {
@@ -95,10 +87,37 @@ button:hover, .btn:hover {
 }
 
 /* === TABLAS === */
-table {
+.table-responsive {
   width: 100%;
-  border-collapse: collapse;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-top: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* sombra sutil al hacer scroll */
+.table-responsive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.1), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.table-responsive:hover::after {
+  opacity: 1;
+}
+
+.table-responsive table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -108,12 +127,14 @@ th {
   color: #fff;
   padding: 10px;
   text-align: center;
+  font-size: 15px;
 }
 
 td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   text-align: center;
+  font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -139,21 +160,109 @@ tr:nth-child(even) {
   margin-bottom: 15px;
 }
 
-
+/* === SWEETALERT2 RESPONSIVE === */
+.swal2-popup {
+  width: 90% !important;
+  max-width: 400px;
+  font-size: 16px;
+}
 
 @media (max-width: 480px) {
-  .login-container,
-  .calificar-container,
-  .perfil-container {
-    padding: 15px;
-  }
-
-  input, select, textarea {
+  .swal2-popup {
     font-size: 14px;
     padding: 10px;
   }
 
+  .swal2-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .swal2-confirm, .swal2-cancel {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* === RESPONSIVE GENERAL === */
+@media (max-width: 768px) {
+  .login-container,
+  .calificar-container,
+  .perfil-container {
+    width: 95%;
+    margin: 25px auto;
+    padding: 20px;
+  }
+
+  h1, h2, h3 {
+    font-size: 20px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+    padding: 9px;
+  }
+
+  button, .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  table, th, td {
+    font-size: 13px;
+  }
+}
+
+/* === MOBILE PEQUEÑOS === */
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .login-container,
+  .calificar-container,
+  .perfil-container {
+    width: 92%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
   .titulo-perfil {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h1, h2, h3 {
+    font-size: 18px;
+  }
+
+  input, select, textarea {
+    font-size: 13px;
+  }
+
+  button, .btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table-responsive table {
+    min-width: 700px;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  td:nth-child(2), td:nth-child(5), td:nth-child(6) {
+    white-space: normal;
+    text-align: left;
   }
 }
