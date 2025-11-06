@@ -1,11 +1,16 @@
 /* === ESTILO CORPORATIVO / PROFESIONAL === */
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #eef2f0; /* Fondo gris verdoso claro */
+  background: url('../img/Admin.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed; 
+  background-color: #eef2f0; 
   margin: 0;
   padding: 0;
   color: #333;
 }
+
 
 /* === CONTENEDOR PRINCIPAL === */
 .admin-container {

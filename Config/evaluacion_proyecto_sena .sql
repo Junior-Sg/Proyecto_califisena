@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2025 a las 18:28:31
+-- Tiempo de generación: 06-11-2025 a las 22:53:34
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -225,15 +225,7 @@ CREATE TABLE `calificaciones` (
   `estado` varchar(80) DEFAULT NULL,
   `fecha_calificacion` datetime DEFAULT current_timestamp(),
   `total` int(11) DEFAULT NULL
-) ;
-
---
--- Volcado de datos para la tabla `calificaciones`
---
-
-INSERT INTO `calificaciones` (`id_calificacion`, `id_asignacion`, `dominio_tematico`, `creatividad_diseno`, `planteamiento_problema`, `pertinencia_impacto`, `objetivos`, `metodologia`, `resultados`, `bibliografia`, `estado`, `fecha_calificacion`, `total`) VALUES
-(1, 1, 10, 15, 15, 10, 10, 15, 20, 10, 'En curso', '2025-11-06 10:28:04', 105),
-(2, 157, 5, 5, 5, 5, 5, 5, 5, 5, 'En curso', '2025-11-06 10:30:55', 40);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
