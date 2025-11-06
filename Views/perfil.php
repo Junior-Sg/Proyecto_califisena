@@ -55,44 +55,43 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
         <th>Proyecto</th>
         <th>Tipo Participación</th>
         <th>Regional</th>
+        <!-- para definir el cambio que pidieron el si es poster, stan o ponencia  -->
+        <th>Tipo proyecto</th>
         <th>Centro de Formación</th>
         <th>Estado</th>
         <th>Acción</th>
         <th>Exportar</th>
       </tr>
 
-      <?php if (!empty($proyectos)): ?>
-        <?php foreach ($proyectos as $p): ?>
-          <tr>
-            <td><?php echo $p["id_proyecto"]; ?></td>
-            <td><?php echo htmlspecialchars($p["nombre_proyecto"]); ?></td>
-            <td><?php echo htmlspecialchars($p["tipo_participacion"]); ?></td>
-            <td><?php echo htmlspecialchars($p["regional"]); ?></td>
-            <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
-            <td>
-              <?php if (!empty($p["calificado"])): ?>
-                <span style="color:green; font-weight:bold;">✅ Calificado</span>
-              <?php else: ?>
-                <span style="color:#b22222; font-weight:bold;">⛔ Pendiente</span>
-              <?php endif; ?>
-            </td>
-            <td>
-              <?php if (empty($p["calificado"])): ?>
-                <a href="calificar.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" class="btn">Calificar</a>
-              <?php else: ?>
-                <button class="btn" style="background-color:#888; cursor:not-allowed;" disabled>Calificado</button>
-              <?php endif; ?>
-            </td>
-            <td>
-              <a href="exportar_excel.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
-                <i class="fa-solid fa-file-excel" style="color:#1d6f42; font-size:20px;"></i>
-              </a>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <tr><td colspan="8">No hay proyectos asignados.</td></tr>
-      <?php endif; ?>
+      <?php foreach ($proyectos as $p): ?>
+        <tr>
+          <td><?php echo $p["id_proyecto"]; ?></td>
+          <td><?php echo htmlspecialchars($p["nombre_proyecto"]); ?></td>
+          <td><?php echo htmlspecialchars($p["regional"]); ?></td>
+          <td><?php echo htmlspecialchars($p["centro_formacion"]); ?></td>
+          <td>
+          <?php if ($p["calificado"]): ?>
+              <span style="color:green; font-weight:bold;">✅ Calificado</span>
+            <?php else: ?>
+              <span style="color:#b22222; font-weight:bold;">⛔ Pendiente</span>
+            <?php endif; ?>
+
+  </form>
+</td>
+          <td>
+            <?php if (!$p["calificado"]): ?>
+              <a href="calificar.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" class="btn">Calificar</a>
+            <?php else: ?>
+              <button class="btn" style="background-color:#888; cursor:not-allowed;" disabled>Calificado</button>
+            <?php endif; ?>
+          </td>
+          <td>
+            <a href="exportar_excel.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
+              <i class="fa-solid fa-file-excel" style="color:#1d6f42; font-size:20px;"></i>
+            </a>
+          </td>
+        </tr>
+      <?php endforeach; ?>
     </table>
 
     <div class="actions">
@@ -104,23 +103,24 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
   <script>
   function confirmarLogout() {
     Swal.fire({
-      title: '¿Desea cerrar sesión?',
-      text: "Tu sesión se cerrará y volverás al inicio de sesión.",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Sí, cerrar sesión',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "../Controllers/logout.php";
-      }
-    });
+         title: '¿Desea cerrar sesión?',
+         text: "Tu sesión se cerrará y volverás al inicio de sesión.",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#d33',
+         cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, cerrar sesión',
+         cancelButtonText: 'Cancelar',
+         width: '90%',
+         customClass: {
+         popup: 'swal-responsive'
+     }
+   });
   }
   </script>
 
 </body>
+<?php include 'footer.php'; ?>
 </html>
 
 

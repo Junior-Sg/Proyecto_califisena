@@ -23,6 +23,8 @@ if (!isset($_SESSION["id_evaluador"]) || $_SESSION["id_evaluador"] != 76) {
 
       <!-- Crear Proyecto -->
       <a href="crear_proyecto.php" class="btn">➕ Crear Proyecto</a>
+      <a href="crear_evaluador.php" class="btn">➕ Nuevo Evaluador</a>
+      <a href="ver_evaluadores.php" class="btn">➕ Ver/evaluadores</a>
 
       <!-- Crear Asignación -->
       <a href="crear_asignacion.php" class="btn">📋 Asignar Proyecto</a>
@@ -32,17 +34,7 @@ if (!isset($_SESSION["id_evaluador"]) || $_SESSION["id_evaluador"] != 76) {
 
       <!-- Ver y Editar asignaciones -->
       <a href="ver_asignaciones.php" class="btn">👥 Ver / Editar Asignaciones</a>
-
-      <!-- Exportar todas las calificaciones (Solo Admin) -->
-      <a href="../../Controllers/exportar_todo.php" class="btn" style="background:#146531;">
-        📥 Exportar Todas las Calificaciones
-      </a>
-
-      <!-- Cerrar sesión -->
-      <a href="../../Controllers/logout.php" class="btn" style="background:#a33;">
-        🚪 Cerrar Sesión
-      </a>
-
+      <a href="../perfil.php" class="btn">⬅ Volver al Perfil</a>
     </div>
   </div>
 </body>

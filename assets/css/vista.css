@@ -139,9 +139,21 @@ tr:nth-child(even) {
   margin-bottom: 15px;
 }
 
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 10px;
-  color: #777;
+
+
+@media (max-width: 480px) {
+  .login-container,
+  .calificar-container,
+  .perfil-container {
+    padding: 15px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .titulo-perfil {
+    font-size: 22px;
+  }
 }
