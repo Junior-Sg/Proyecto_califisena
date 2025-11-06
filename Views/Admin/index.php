@@ -34,7 +34,15 @@ if (!isset($_SESSION["id_evaluador"]) || $_SESSION["id_evaluador"] != 76) {
 
       <!-- Ver y Editar asignaciones -->
       <a href="ver_asignaciones.php" class="btn">👥 Ver / Editar Asignaciones</a>
-      <a href="../perfil.php" class="btn">⬅ Volver al Perfil</a>
+      <!-- Exportar todas las calificaciones (Solo Admin) -->
+      <a href="../../Controllers/exportar_todo.php" class="btn" style="background:#146531;">
+        📥 Exportar Todas las Calificaciones
+      </a>
+
+      <!-- Cerrar sesión -->
+      <a href="../../Controllers/logout.php" class="btn" style="background:#a33;">
+        🚪 Cerrar Sesión
+      </a>
     </div>
   </div>
 </body>

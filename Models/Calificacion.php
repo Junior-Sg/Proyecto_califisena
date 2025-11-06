@@ -29,23 +29,7 @@ class Calificacion {
     ]);
 
 
-        $stmt = $this->conn->prepare($query);
-
-        return $stmt->execute([
-            ":id_asignacion" => $data["id_asignacion"],
-            ":dominio_tematico" => $data["dominio_tematico"],
-            ":formato_poster" => $data["formato_poster"],
-            ":creatividad_diseno" => $data["creatividad_diseno"],
-            ":introduccion" => $data["introduccion"],
-            ":planteamiento_problema" => $data["planteamiento_problema"],
-            ":objetivos" => $data["objetivos"],
-            ":referente_teorico" => $data["referente_teorico"],
-            ":metodologia" => $data["metodologia"],
-            ":resultados" => $data["resultados"],
-            ":bibliografia" => $data["bibliografia"],
-            ":total" => $data["total"],
-            ":estado" => $data["estado"]
-        ]);
+       
     }
 }
 ?>
