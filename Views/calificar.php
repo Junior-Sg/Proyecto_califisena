@@ -53,28 +53,22 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
           </option>
         <?php endforeach; ?>
       </select>
-
-      <!-- Campos de calificación -->
       <input type="number" name="dominio_tematico" placeholder="Dominio temático (máx. 10)" min="0" max="10" required>
-      <input type="number" name="formato_poster" placeholder="Formato del póster (máx. 10)" min="0" max="10" required>
-      <input type="number" name="creatividad_diseno" placeholder="Creatividad y diseño (máx. 5)" min="0" max="5" required>
-      <input type="number" name="introduccion" placeholder="Introducción (máx. 10)" min="0" max="10" required>
+      <input type="number" name="creatividad_diseno" placeholder="Creatividad y diseño (máx. 15)" min="0" max="15" required>
       <input type="number" name="planteamiento_problema" placeholder="Planteamiento del problema (máx. 15)" min="0" max="15" required>
-      <input type="number" name="objetivos" placeholder="Objetivos (máx. 10)" min="0" max="10" required>
-
-      <!-- Nuevos campos -->
-      <input type="number" name="referente_teorico" placeholder="Referente teórico (máx. 5)" min="0" max="5" required>
+      <input type="number" name="pertinencia_impacto" placeholder="Pertinencia e Impacto (máx. 10)" min="0" max="10" required>
+      <input type="number" name="objetivos" placeholder="Objetivos del proyecto (máx. 10)" min="0" max="10" required>
       <input type="number" name="metodologia" placeholder="Metodología (máx. 15)" min="0" max="15" required>
-      <input type="number" name="resultados" placeholder="Resultados (máx. 15)" min="0" max="15" required>
-      <input type="number" name="bibliografia" placeholder="Bibliografía (máx. 5)" min="0" max="5" required>
-
-      <!-- Estado -->
+      <input type="number" name="resultados" placeholder="Resultados (máx. 20)" min="0" max="20" required>
+      <input type="number" name="bibliografia" placeholder="Bibliografía (máx. 10)" min="0" max="10" required>
       <label for="estado_proyecto">Estado del Proyecto:</label>
       <select name="estado_proyecto" id="estado_proyecto" required>
-        <option value="">Seleccione el estado</option>
-        <option value="En curso">En curso</option>
-        <option value="Finalizado">Finalizado</option>
-      </select>
+      <option value="">Seleccione el estado</option>
+      <option value="En curso">En curso</option>
+      <option value="Finalizado">Finalizado</option>
+
+    </select>
+
 
       <button type="submit">Guardar Calificación</button>
     </form>
