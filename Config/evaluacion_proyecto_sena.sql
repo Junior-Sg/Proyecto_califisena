@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2025 a las 03:36:34
+-- Tiempo de generación: 06-11-2025 a las 03:14:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -196,7 +196,14 @@ INSERT INTO `asignaciones` (`id_asignacion`, `id_evaluador`, `id_proyecto`, `fec
 (155, 74, 27, '2025-10-30'),
 (156, 75, 51, '2025-10-30'),
 (157, 75, 46, '2025-10-30'),
-(158, 75, 10, '2025-10-30');
+(158, 75, 10, '2025-10-30'),
+(159, 61, 62, '2025-11-05'),
+(160, 78, 1, '2025-11-05'),
+(161, 51, 67, '2025-11-05'),
+(162, 15, 73, '2025-11-05'),
+(163, 78, 11, '2025-11-05'),
+(164, 61, 42, '2025-11-05'),
+(165, 70, 14, '2025-11-05');
 
 -- --------------------------------------------------------
 
@@ -326,7 +333,8 @@ INSERT INTO `evaluadores` (`id_evaluador`, `nombre`, `usuario`, `contrasena_hash
 (73, 'Pedro Antonio Celis Parra', 'pcelisp', 'PcelisParra45', 'pcelisp@sena.edu.co', '3204581120', NULL, '2025-10-29 21:34:45'),
 (74, 'Anuar Ferney Caldón Quira', 'afcaldon', 'AcaldonQuira44', 'afcaldon@sena.edu.co', '3128477848', NULL, '2025-10-29 21:34:45'),
 (75, 'ELIANA MARCELA TUNAROSA', 'elirosa', 'eliriosa314', NULL, NULL, NULL, '2025-10-30 20:10:26'),
-(76, 'SENAADMIN', 'Senaadmin', 'Senaadmin', 'sena@gmail.com', '3107928579', 'admin', '2025-11-03 00:55:57');
+(76, 'SENAADMIN', 'Senaadmin', 'Senaadmin', 'sena@gmail.com', '3107928579', 'admin', '2025-11-03 00:55:57'),
+(78, 'John Alejandro Vargas Alfonso ', 'Jonh A', 'Jonh A', NULL, NULL, NULL, '2025-11-05 20:11:30');
 
 -- --------------------------------------------------------
 
@@ -349,107 +357,89 @@ CREATE TABLE `proyectos` (
 
 INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `tipo_participacion`, `regional`, `centro_formacion`, `fecha_creacion`) VALUES
 (1, 'Fortalecimiento de la seguridad alimentaria sostenible a través del cultivo de plantas alimenticias en el vivero del Sena Regional Amazonas', 'Stand', 'Amazonas', '9517 - Centro para la Biodiversidad y el Turismo del Amazonas', '2025-10-30 19:11:13'),
-(2, 'Innovación de técnicas para la cría sostenible de abejas nativas a partir de conocimientos locales, Leticia, Amazonas', NULL, 'Amazonas', '9517 - Centro para la Biodiversidad y el Turismo del Amazonas', '2025-10-30 19:11:13'),
-(3, 'TIEMPOS PREDETERMINADOS EN MIPYMES DE CONFECCION', NULL, 'Antioquia', '9202 - Centro de Formación en Diseño, Confección y Moda', '2025-10-30 19:11:13'),
+(2, 'Innovación de técnicas para la cría sostenible de abejas nativas a partir de conocimientos locales, Leticia, Amazonas', 'Cartel o Poster', 'Amazonas', '9517 - Centro para la Biodiversidad y el Turismo del Amazonas', '2025-10-30 19:11:13'),
+(3, 'TIEMPOS PREDETERMINADOS EN MIPYMES DE CONFECCION', 'Stand', 'Antioquia', '9202 - Centro de Formación en Diseño, Confección y Moda', '2025-10-30 19:11:13'),
 (4, 'Moda Popular: Circularidad en la moda', NULL, 'Antioquia', '9202 - Centro de Formación en Diseño, Confección y Moda', '2025-10-30 19:11:13'),
-(5, 'Estrategia de respuesta a emergencias cardiorrespiratorias en una zona rural del municipio de Guarne, Antioquia', NULL, 'Antioquia', '9401 - Centro de Servicios de Salud', '2025-10-30 19:11:13'),
-(6, 'Transformación digital en sectores de la economía popular de la plaza minorista José María Villa', NULL, 'Antioquia', '9402 - Centro de Servicios y Gestión Empresarial', '2025-10-30 19:11:13'),
-(7, 'EPOCA.COM', NULL, 'Antioquia', '9402 - Centro de Servicios y Gestión Empresarial', '2025-10-30 19:11:13'),
-(8, 'Cultivando Biodiversidad: Arroz + Peces + Patos', NULL, 'Antioquia', '9501 - Complejo Tecnológico para la Gestión Agroempresarial', '2025-10-30 19:11:13'),
-(9, 'Procesamiento de raciones alimenticias para Bovinos y Equinos', NULL, 'Antioquia', '9502 - Complejo Tecnológico Minero Agroempresarial', '2025-10-30 19:11:13'),
-(10, 'La Chagra: el valor agregado que recupera el campo', NULL, 'Antioquia', '9503 - Centro de la Innovación, la Agroindustria y la Aviación', '2025-10-30 19:11:13'),
-(11, 'Influencia de bioestimulantes en el crecimiento fisiología e índice relativo de clorofila en el cultivo de La berenjena (Solanum melongena) después del trasplante en Apartado Antioquia.', NULL, 'Antioquia', '9504 - Complejo Tecnológico Agroindustrial, Pecuario y Turístico', '2025-10-30 19:11:13'),
-(12, 'Arauca Sostenible, aprovechamiento de donaciones de alimentos en el municipio de Arauca para alimentar a población vulnerable, producción para alimentación animal y abono orgánico, como estrategia para contribuir al establecimiento de objetivos del desarrollo sostenible. Desperdicio cero (0) y hambre cero (0).', NULL, 'Arauca', '9530 - Centro de Gestión y Desarrollo Agroindustrial de Arauca', '2025-10-30 19:11:13'),
-(13, 'EVALUACIÓN DE LA PECTINA OBTENIDA MEDIANTE HIDRÓLISIS ÁCIDA PARA EL APROVECHAMIENTO DE RESIDUOS AGROINDUSTRIALES DE MANGO', NULL, 'Atlántico', '9103 - Centro para el Desarrollo Agroecologico y Agroindustrial', '2025-10-30 19:11:13'),
-(14, 'Estandarización del proceso de elaboración de helado soft a partir de la leche de búfala producida en el departamento del Atlántico', NULL, 'Atlántico', '9103 - Centro para el Desarrollo Agroecologico y Agroindustrial', '2025-10-30 19:11:13'),
-(15, 'Fortalecimiento comercial en canales digitales de los micronegocios en la economía popular del Área Metropolitana de Barranquilla: Ruta full popular.', NULL, 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(16, 'Modelo estratégico de innovación social para el fortalecimiento de negocios de economía popular en el sector pesquero del Atlántico: ECORIO', NULL, 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(17, 'Inteligencia de mercado para el sector agroindustrial del departamento del Atlántico.', NULL, 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(18, 'Conectando con el consumidor: estrategias de venta y promoción para las unidades de negocios pertenecientes a CAMPESENA, laboratorio de economía popular y Tesoros del Atlántico.', NULL, 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(19, 'DIAGNOSTICO DEL RECIBO DE MERCANCIAS EN LAS TIENDAS DE TURBANA- BOLIVAR.', NULL, 'Bolívar', '9105 - Centro Internacional Náutico, Fluvial y Portuario', '2025-10-30 19:11:13'),
-(20, 'Cadena sostenible del ñame en Montes de María para el impulso de la economía campesina y la conexión con mercados internacionales', NULL, 'Bolívar', '9304 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(21, 'Aprovechamiento de plantas medicinales del departamento de Bolívar para el desarrollo de parches con actividad antiinflamatoria y antibacteriana como alternativa productiva campesina', NULL, 'Bolívar', '9304 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(5, 'Estrategia de respuesta a emergencias cardiorrespiratorias en una zona rural del municipio de Guarne, Antioquia', 'Cartel o Poster', 'Antioquia', '9401 - Centro de Servicios de Salud', '2025-10-30 19:11:13'),
+(6, 'Transformación digital en sectores de la economía popular de la plaza minorista José María Villa', 'Cartel o Poster', 'Antioquia', '9402 - Centro de Servicios y Gestión Empresarial', '2025-10-30 19:11:13'),
+(7, 'EPOCA.COM', 'Cartel o Poster', 'Antioquia', '9402 - Centro de Servicios y Gestión Empresarial', '2025-10-30 19:11:13'),
+(8, 'Cultivando Biodiversidad: Arroz + Peces + Patos', 'Cartel o Poster', 'Antioquia', '9501 - Complejo Tecnológico para la Gestión Agroempresarial', '2025-10-30 19:11:13'),
+(9, 'Procesamiento de raciones alimenticias para Bovinos y Equinos', 'Poster y Prototipo', 'Antioquia', '9502 - Complejo Tecnológico Minero Agroempresarial', '2025-10-30 19:11:13'),
+(10, 'La Chagra: el valor agregado que recupera el campo', 'Stand', 'Antioquia', '9503 - Centro de la Innovación, la Agroindustria y la Aviación', '2025-10-30 19:11:13'),
+(11, 'Influencia de bioestimulantes en el crecimiento fisiología e índice relativo de clorofila en el cultivo de La berenjena (Solanum melongena) después del trasplante en Apartado Antioquia.', 'Cartel o Poster', 'Antioquia', '9504 - Complejo Tecnológico Agroindustrial, Pecuario y Turístico', '2025-10-30 19:11:13'),
+(12, 'Arauca Sostenible, aprovechamiento de donaciones de alimentos en el municipio de Arauca para alimentar a población vulnerable, producción para alimentación animal y abono orgánico, como estrategia para contribuir al establecimiento de objetivos del desarrollo sostenible. Desperdicio cero (0) y hambre cero (0).', 'Cartel o Poster', 'Arauca', '9530 - Centro de Gestión y Desarrollo Agroindustrial de Arauca', '2025-10-30 19:11:13'),
+(13, 'EVALUACIÓN DE LA PECTINA OBTENIDA MEDIANTE HIDRÓLISIS ÁCIDA PARA EL APROVECHAMIENTO DE RESIDUOS AGROINDUSTRIALES DE MANGO', 'Poster y Prototipo', 'Atlántico', '9103 - Centro para el Desarrollo Agroecologico y Agroindustrial', '2025-10-30 19:11:13'),
+(14, 'Estandarización del proceso de elaboración de helado soft a partir de la leche de búfala producida en el departamento del Atlántico', 'Poster y Prototipo', 'Atlántico', '9103 - Centro para el Desarrollo Agroecologico y Agroindustrial', '2025-10-30 19:11:13'),
+(15, 'Fortalecimiento comercial en canales digitales de los micronegocios en la economía popular del Área Metropolitana de Barranquilla: Ruta full popular.', 'Cartel o Poster', 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(16, 'Modelo estratégico de innovación social para el fortalecimiento de negocios de economía popular en el sector pesquero del Atlántico: ECORIO', 'Cartel o Poster', 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(17, 'Inteligencia de mercado para el sector agroindustrial del departamento del Atlántico.', 'Cartel o Poster', 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(18, 'Conectando con el consumidor: estrategias de venta y promoción para las unidades de negocios pertenecientes a CAMPESENA, laboratorio de economía popular y Tesoros del Atlántico.', 'Cartel o Poster', 'Atlántico', '9302 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(19, 'DIAGNOSTICO DEL RECIBO DE MERCANCIAS EN LAS TIENDAS DE TURBANA- BOLIVAR.', 'Cartel o Poster', 'Bolívar', '9105 - Centro Internacional Náutico, Fluvial y Portuario', '2025-10-30 19:11:13'),
+(20, 'Cadena sostenible del ñame en Montes de María para el impulso de la economía campesina y la conexión con mercados internacionales', 'Cartel o Poster', 'Bolívar', '9304 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(21, 'Aprovechamiento de plantas medicinales del departamento de Bolívar para el desarrollo de parches con actividad antiinflamatoria y antibacteriana como alternativa productiva campesina', 'Cartel o Poster', 'Bolívar', '9304 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
 (22, 'Evaluación del nivel de infestación de picudos que afectan fitosanitariamente las palmas datileras en Boyacá.', NULL, 'Boyacá', '9110 - Centro de Desarrollo Agropecuario y Agroindustrial', '2025-10-30 19:11:13'),
-(23, 'Granja agroecológica y economía circular', NULL, 'Boyacá', '9551 - Centro de la Innovación Agroindustrial y de Servicios', '2025-10-30 19:11:13'),
-(24, 'Revitalización Vivero', NULL, 'Boyacá', '9551 - Centro de la Innovación Agroindustrial y de Servicios', '2025-10-30 19:11:13'),
-(25, 'Elaboración del Plan de Comercialización Internacional de Productos para Pymes en Colombia', NULL, 'Caldas', '9306 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(26, 'Estrategias Comerciales y Administrativas para los micronegocios de economía popular de la ciudad de Manizales', NULL, 'Caldas', '9306 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(27, 'Aprovechamiento de la planta Sapindus saponaria para la obtención de jabón natural como producto sostenible en la comunidad de aprendices del CPYA de La Dorada, Caldas', NULL, 'Caldas', '9515 - Centro Pecuario y Agroempresarial', '2025-10-30 19:11:13'),
-(28, 'Evaluación de la calidad fisicoquímica y microbiológica de la leche cruda como base para el fortalecimiento de los sistemas de producción bovina en el norte del departamento del Caquetá', NULL, 'Caquetá', '9516 - Centro Tecnológico de la Amazonia', '2025-10-30 19:11:13'),
-(29, 'Aprovechamiento del Tallo de Cannabis Sativa como uso alternativo para procesos de Bioconstrucción en Toribío, Cauca.', NULL, 'Cauca', '9113 - Centro Agropecuario', '2025-10-30 19:11:13'),
-(30, 'Marketing digital desde el territorio: diseño de contenidos para visibilizar productos y servicios de la economía popular en Timbío', NULL, 'Cauca', '9113 - Centro Agropecuario', '2025-10-30 19:11:13'),
-(31, 'Prácticas administrativas, contables y financieras en unidades productivas adscritas al C.C. y S. Popayán-cauca: análisis diagnostico desde el año 2021', NULL, 'Cauca', '9307 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(32, 'Automatización del cultivo de Forraje Verde Hidropónico (FVH) mediante el control de variables de producción', NULL, 'Córdoba', '9115 - Centro Agropecuario y de Biotecnología el Porvenir', '2025-10-30 19:11:13'),
-(33, 'Modelo Piloto Integrador para fomento del Entrenamiento Autónomo el Emprendimiento y la Innovación en el Sector Confección fortaleciendo la economía Popular en Aprendices de la Red Textil del Centro de Comercio, Industria y Turismo de Córdoba', NULL, 'Córdoba', '9523 - Centro de Comercio, Industria y Turismo de Córdoba', '2025-10-30 19:11:13'),
-(34, 'Agromind 360: Plataforma Inteligente para la Comercialización y Trazabilidad Agroempresarial del Sumapaz', NULL, 'Cundinamarca', '9510 - Centro Agroecológico y Empresarial', '2025-10-30 19:11:13'),
-(35, 'Syropes funcionales, una alternativa en la elaboración de bebidas para consumo humano.', NULL, 'Cundinamarca', '9512 - Centro de Biotecnología Agropecuaria', '2025-10-30 19:11:13'),
-(36, 'Estudio sobre la viabilidad de exportar moda sostenible para caninos e innovación ambiental hacia Berlin Alemania.', NULL, 'Cundinamarca', '9513 - Centro de Desarrollo Agroempresarial', '2025-10-30 19:11:13'),
-(37, 'Uso de la TIC´s en la Red de Actividad Física Recreación y Deporte Aplicadas a la formación en el Centro de desarrollo agroempresarial de Chía.', NULL, 'Cundinamarca', '9513 - Centro de Desarrollo Agroempresarial', '2025-10-30 19:11:13'),
-(38, 'Diagnóstico de mercado para productos autóctonos del municipio de Soacha', NULL, 'Distrito Capital', '9209 - Centro de Tecnologías para la Construcción y la Madera', '2025-10-30 19:11:13'),
-(39, 'Diseño Singular del Pedal de Freno para Minicargo como Herramienta de Transporte para Economía Popular y Campesina', NULL, 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
-(40, 'Seguridad vial, economía popular y campesina: un enfoque integral para el desarrollo rural.', NULL, 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
-(41, 'Mi Vivero Digital', NULL, 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
-(42, 'Diseño e implementación del modulo ABS para vehículo de Transporte para Economía Popular y Campesina', NULL, 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
-(43, 'Proyecto Recuperación de la memoria histórica: mercados campesinos una estrategia para el empoderamiento de la mujer campesina en el caso ANUC', NULL, 'Distrito Capital', '9303 - Centro de Gestión de Mercados, Logística y Tecnologías de la Información', '2025-10-30 19:11:13'),
-(44, 'Implementar la herramienta tecnológica para medir el clima y la cultura en las tiendas de barrio (muestra representativa) en la Localidad de Bosa para 2025.', NULL, 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
-(45, 'Fortalecimiento del Emprendimiento Campesino en Colombia: Estrategias con base en la denominación de origen y la identidad campesina para la creación de empresas sostenibles. Estudio de caso: Vereda Pasquilla', NULL, 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
-(46, 'Rescatando la sabiduría de nuestras raíces para construir un futuro sostenible', NULL, 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
-(47, 'YOSUULIA JEMETSU: Tradición que nutre y cuida', NULL, 'Guajira', '9222 - Centro Industrial y de Energías Alternativas', '2025-10-30 19:11:13'),
-(48, 'MODELACIÓN DE AMBIENTES DE APRENDIZAJE CONTEXTUALIZADOS PARA LA FORMACIÓN TÉCNICA EN AGROINDUSTRIA EN ZONAS RURALES DE LA GUAJIRA', NULL, 'Guajira', '9524 - Centro Agroempresarial y Acuícola', '2025-10-30 19:11:13'),
-(49, 'Implementación de forraje verde hidropónico como alternativa sostenible para el fortalecimiento de la economía campesina en sistemas agropecuarios de pequeña escala', NULL, 'Guajira', '9524 - Centro Agroempresarial y Acuícola', '2025-10-30 19:11:13'),
-(50, 'USO DE SUBPRODUCTOS DEL CULTIVO DE CACAO COMO INSUMOS PARA LA PRODUCCIÓN DE ABONOS ORGÁNICOS EN SAN JOSÉ DEL GUAVIARE.', NULL, 'Guaviare', '9533 - Centro de Desarrollo Agroindustrial, Turístico y Tecnológico del Guaviare', '2025-10-30 19:11:13'),
-(51, 'Inventario De Mariposas Diurnas (Lepidóptera) Asociadas A Agroecosistemas Ubicados En Zona De Bosque Seco Tropical Campoalegre- Huila', NULL, 'Huila', '9116 - Centro de Formación Agroindustrial', '2025-10-30 19:11:13'),
-(52, 'Implementación de estrategias de mitigación de Gases de efecto invernadero y sostenibilidad en sistemas de producción pecuaria', NULL, 'Huila', '9116 - Centro de Formación Agroindustrial', '2025-10-30 19:11:13'),
-(53, 'Modelo integral de marketing sostenible, para potencializar la comercialización de los productos del campo y bienestar de los campesinos.', NULL, 'Huila', '9526 - Centro de Desarrollo Agroempresarial y Turístico del Huila', '2025-10-30 19:11:13'),
-(54, 'Cultivo de pepino (Cucumis sativus) a partir del uso de la microalga Chlorella vulgaris como biofertilizante: una alternativa agrícola para los productores nariñenses', NULL, 'Nariño', '9535 - Centro Agroindustrial y Pesquero de la Costa Pacífica', '2025-10-30 19:11:13'),
-(55, 'Diseño estratégico de un sistema integrado de gestión desde el enfoque en procesos de la unidad productiva de cerdos del Centro Internacional de Producción Limpia Lope SENA Regional Nariño, en el año 2025.', NULL, 'Nariño', '9536 - Centro Internacional de Producción Limpia - Lope', '2025-10-30 19:11:13'),
-(56, 'Reconocimiento del pefil sensorial del cacao de calidad superior por los actores de la cadena cacaotera en Norte de Santander.', NULL, 'Norte de Santander', '9119 - Centro de Formación para el Desarrollo Rural y Minero', '2025-10-30 19:11:13'),
-(57, 'ESTRATEGIA DE COMUNICACIÓN DIGITAL BASADO EN AVIFAUNA PARA NEGOCIOS DE ECONOMÍA POPULAR DE LA ZONA RURAL DEL ÁREA METROPOLITANA CÚCUTA', NULL, 'Norte de Santander', '9537 - Centro de la Industria, la Empresa y los Servicios', '2025-10-30 19:11:13'),
-(58, 'Plan exportador de panela pulverizada elaborada en el municipio de Arboledas, Norte de Santander.', NULL, 'Norte de Santander', '9537 - Centro de la Industria, la Empresa y los Servicios', '2025-10-30 19:11:13'),
-(59, 'Evaluación de tres tipos de abono orgánico tipo bocashi en la producción de pepino (cucumis sativus) en la Amazonía Colombiana', NULL, 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
-(60, 'Efecto del uso de concentrado a base de alimentos alternativos de la región como estrategia de alimentación sostenible en cachama (colossoma macropumum) en el departamento del putumayo', NULL, 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
-(61, 'Efecto de la inclusión de larva de mosca negra soldado (Hermetia illunces) como alternativa de suplementación sostenible en cachama (Colossoma macropomum) en el departamento del Putumayo.', NULL, 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
-(62, 'Optimización de los flujos de trabajo en prenda superior deportiva para las empresas de confección del departamento del Quindío', NULL, 'Quindío', '9231 - Centro para el Desarrollo Tecnológico de la Construcción y la Industria', '2025-10-30 19:11:13'),
-(63, 'Software de gestión automotriz TallerSoft', NULL, 'Quindío', '9231 - Centro para el Desarrollo Tecnológico de la Construcción y la Industria', '2025-10-30 19:11:13'),
-(64, 'Factores determinantes en las estrategias de comercialización para la economia informal de la población indigena de la Ciudad de Armenia.', NULL, 'Quindío', '9538 - Centro de Comercio y Turismo', '2025-10-30 19:11:13'),
+(23, 'Granja agroecológica y economía circular', 'Ponencia', 'Boyacá', '9551 - Centro de la Innovación Agroindustrial y de Servicios', '2025-10-30 19:11:13'),
+(24, 'Revitalización Vivero', 'Ponencia', 'Boyacá', '9551 - Centro de la Innovación Agroindustrial y de Servicios', '2025-10-30 19:11:13'),
+(25, 'Elaboración del Plan de Comercialización Internacional de Productos para Pymes en Colombia', 'Ponencia', 'Caldas', '9306 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(26, 'Estrategias Comerciales y Administrativas para los micronegocios de economía popular de la ciudad de Manizales', 'Ponencia', 'Caldas', '9306 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(27, 'Aprovechamiento de la planta Sapindus saponaria para la obtención de jabón natural como producto sostenible en la comunidad de aprendices del CPYA de La Dorada, Caldas', 'Cartel o Poster', 'Caldas', '9515 - Centro Pecuario y Agroempresarial', '2025-10-30 19:11:13'),
+(28, 'Evaluación de la calidad fisicoquímica y microbiológica de la leche cruda como base para el fortalecimiento de los sistemas de producción bovina en el norte del departamento del Caquetá', 'Ponencia', 'Caquetá', '9516 - Centro Tecnológico de la Amazonia', '2025-10-30 19:11:13'),
+(29, 'Aprovechamiento del Tallo de Cannabis Sativa como uso alternativo para procesos de Bioconstrucción en Toribío, Cauca.', 'Cartel o Poster', 'Cauca', '9113 - Centro Agropecuario', '2025-10-30 19:11:13'),
+(30, 'Marketing digital desde el territorio: diseño de contenidos para visibilizar productos y servicios de la economía popular en Timbío', 'Poster y Prototipo', 'Cauca', '9113 - Centro Agropecuario', '2025-10-30 19:11:13'),
+(31, 'Prácticas administrativas, contables y financieras en unidades productivas adscritas al C.C. y S. Popayán-cauca: análisis diagnostico desde el año 2021', 'Cartel o Poster', 'Cauca', '9307 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(32, 'Automatización del cultivo de Forraje Verde Hidropónico (FVH) mediante el control de variables de producción', 'Poster y Prototipo', 'Córdoba', '9115 - Centro Agropecuario y de Biotecnología el Porvenir', '2025-10-30 19:11:13'),
+(33, 'Modelo Piloto Integrador para fomento del Entrenamiento Autónomo el Emprendimiento y la Innovación en el Sector Confección fortaleciendo la economía Popular en Aprendices de la Red Textil del Centro de Comercio, Industria y Turismo de Córdoba', 'Cartel o Poster', 'Córdoba', '9523 - Centro de Comercio, Industria y Turismo de Córdoba', '2025-10-30 19:11:13'),
+(34, 'Agromind 360: Plataforma Inteligente para la Comercialización y Trazabilidad Agroempresarial del Sumapaz', 'Cartel o Poster', 'Cundinamarca', '9510 - Centro Agroecológico y Empresarial', '2025-10-30 19:11:13'),
+(35, 'Syropes funcionales, una alternativa en la elaboración de bebidas para consumo humano.', 'Poster y Prototipo', 'Cundinamarca', '9512 - Centro de Biotecnología Agropecuaria', '2025-10-30 19:11:13'),
+(36, 'Estudio sobre la viabilidad de exportar moda sostenible para caninos e innovación ambiental hacia Berlin Alemania.', 'Cartel o Poster', 'Cundinamarca', '9513 - Centro de Desarrollo Agroempresarial', '2025-10-30 19:11:13'),
+(37, 'Uso de la TIC´s en la Red de Actividad Física Recreación y Deporte Aplicadas a la formación en el Centro de desarrollo agroempresarial de Chía.', 'Cartel o Poster', 'Cundinamarca', '9513 - Centro de Desarrollo Agroempresarial', '2025-10-30 19:11:13'),
+(38, 'Diagnóstico de mercado para productos autóctonos del municipio de Soacha', 'Cartel o Poster', 'Distrito Capital', '9209 - Centro de Tecnologías para la Construcción y la Madera', '2025-10-30 19:11:13'),
+(39, 'Diseño Singular del Pedal de Freno para Minicargo como Herramienta de Transporte para Economía Popular y Campesina', 'Poster y Prototipo', 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
+(40, 'Seguridad vial, economía popular y campesina: un enfoque integral para el desarrollo rural.', 'Ponencia', 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
+(41, 'Mi Vivero Digital', 'Cartel o Poster', 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
+(42, 'Diseño e implementación del modulo ABS para vehículo de Transporte para Economía Popular y Campesina', 'Poster y Prototipo', 'Distrito Capital', '9213 - Centro de Tecnologías del Transporte', '2025-10-30 19:11:13'),
+(43, 'Proyecto Recuperación de la memoria histórica: mercados campesinos una estrategia para el empoderamiento de la mujer campesina en el caso ANUC', 'Cartel o Poster', 'Distrito Capital', '9303 - Centro de Gestión de Mercados, Logística y Tecnologías de la Información', '2025-10-30 19:11:13'),
+(44, 'Implementar la herramienta tecnológica para medir el clima y la cultura en las tiendas de barrio (muestra representativa) en la Localidad de Bosa para 2025.', 'Cartel o Poster', 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
+(45, 'Fortalecimiento del Emprendimiento Campesino en Colombia: Estrategias con base en la denominación de origen y la identidad campesina para la creación de empresas sostenibles. Estudio de caso: Vereda Pasquilla', 'Cartel o Poster', 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
+(46, 'Rescatando la sabiduría de nuestras raíces para construir un futuro sostenible', 'Ponencia', 'Distrito Capital', '9404 - Centro de Gestión Administrativa', '2025-10-30 19:11:13'),
+(47, 'YOSUULIA JEMETSU: Tradición que nutre y cuida', 'Stand', 'Guajira', '9222 - Centro Industrial y de Energías Alternativas', '2025-10-30 19:11:13'),
+(48, 'MODELACIÓN DE AMBIENTES DE APRENDIZAJE CONTEXTUALIZADOS PARA LA FORMACIÓN TÉCNICA EN AGROINDUSTRIA EN ZONAS RURALES DE LA GUAJIRA', 'Stand', 'Guajira', '9524 - Centro Agroempresarial y Acuícola', '2025-10-30 19:11:13'),
+(49, 'Implementación de forraje verde hidropónico como alternativa sostenible para el fortalecimiento de la economía campesina en sistemas agropecuarios de pequeña escala', 'Stand', 'Guajira', '9524 - Centro Agroempresarial y Acuícola', '2025-10-30 19:11:13'),
+(50, 'USO DE SUBPRODUCTOS DEL CULTIVO DE CACAO COMO INSUMOS PARA LA PRODUCCIÓN DE ABONOS ORGÁNICOS EN SAN JOSÉ DEL GUAVIARE.', 'Cartel o Poster', 'Guaviare', '9533 - Centro de Desarrollo Agroindustrial, Turístico y Tecnológico del Guaviare', '2025-10-30 19:11:13'),
+(51, 'Inventario De Mariposas Diurnas (Lepidóptera) Asociadas A Agroecosistemas Ubicados En Zona De Bosque Seco Tropical Campoalegre- Huila', 'Cartel o Poster', 'Huila', '9116 - Centro de Formación Agroindustrial', '2025-10-30 19:11:13'),
+(52, 'Implementación de estrategias de mitigación de Gases de efecto invernadero y sostenibilidad en sistemas de producción pecuaria', 'Cartel o Poster', 'Huila', '9116 - Centro de Formación Agroindustrial', '2025-10-30 19:11:13'),
+(53, 'Modelo integral de marketing sostenible, para potencializar la comercialización de los productos del campo y bienestar de los campesinos.', 'Cartel o Poster', 'Huila', '9526 - Centro de Desarrollo Agroempresarial y Turístico del Huila', '2025-10-30 19:11:13'),
+(54, 'Cultivo de pepino (Cucumis sativus) a partir del uso de la microalga Chlorella vulgaris como biofertilizante: una alternativa agrícola para los productores nariñenses', 'Ponencia', 'Nariño', '9535 - Centro Agroindustrial y Pesquero de la Costa Pacífica', '2025-10-30 19:11:13'),
+(55, 'Diseño estratégico de un sistema integrado de gestión desde el enfoque en procesos de la unidad productiva de cerdos del Centro Internacional de Producción Limpia Lope SENA Regional Nariño, en el año 2025.', 'Cartel o Poster', 'Nariño', '9536 - Centro Internacional de Producción Limpia - Lope', '2025-10-30 19:11:13'),
+(56, 'Reconocimiento del pefil sensorial del cacao de calidad superior por los actores de la cadena cacaotera en Norte de Santander.', 'Poster y Prototipo', 'Norte de Santander', '9119 - Centro de Formación para el Desarrollo Rural y Minero', '2025-10-30 19:11:13'),
+(57, 'ESTRATEGIA DE COMUNICACIÓN DIGITAL BASADO EN AVIFAUNA PARA NEGOCIOS DE ECONOMÍA POPULAR DE LA ZONA RURAL DEL ÁREA METROPOLITANA CÚCUTA', 'Cartel o Poster', 'Norte de Santander', '9537 - Centro de la Industria, la Empresa y los Servicios', '2025-10-30 19:11:13'),
+(58, 'Plan exportador de panela pulverizada elaborada en el municipio de Arboledas, Norte de Santander.', 'Cartel o Poster', 'Norte de Santander', '9537 - Centro de la Industria, la Empresa y los Servicios', '2025-10-30 19:11:13'),
+(59, 'Evaluación de tres tipos de abono orgánico tipo bocashi en la producción de pepino (cucumis sativus) en la Amazonía Colombiana', 'Cartel o Poster', 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
+(60, 'Efecto del uso de concentrado a base de alimentos alternativos de la región como estrategia de alimentación sostenible en cachama (colossoma macropumum) en el departamento del putumayo', 'Cartel o Poster', 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
+(61, 'Efecto de la inclusión de larva de mosca negra soldado (Hermetia illunces) como alternativa de suplementación sostenible en cachama (Colossoma macropomum) en el departamento del Putumayo.', 'Cartel o Poster', 'Putumayo', '9518 - Centro Agroforestal y Acuícola Arapaima', '2025-10-30 19:11:13'),
+(62, 'Optimización de los flujos de trabajo en prenda superior deportiva para las empresas de confección del departamento del Quindío', 'Ponencia', 'Quindío', '9231 - Centro para el Desarrollo Tecnológico de la Construcción y la Industria', '2025-10-30 19:11:13'),
+(63, 'Software de gestión automotriz TallerSoft', 'Cartel o Poster', 'Quindío', '9231 - Centro para el Desarrollo Tecnológico de la Construcción y la Industria', '2025-10-30 19:11:13'),
+(64, 'Factores determinantes en las estrategias de comercialización para la economia informal de la población indigena de la Ciudad de Armenia.', 'Cartel o Poster', 'Quindío', '9538 - Centro de Comercio y Turismo', '2025-10-30 19:11:13'),
 (65, 'Estrategias de mejora de los Sistemas Contables en los procesos productivos de Campesinos de Circasia Quindío.', NULL, 'Quindío', '9538 - Centro de Comercio y Turismo', '2025-10-30 19:11:13'),
-(66, 'Incubadora y Nacedora de huevos con rotación automática Centro Agropecuario SENA - Risaralda', NULL, 'Risaralda', '9121 - Centro Atención Sector Agropecuario', '2025-10-30 19:11:13'),
-(67, 'EL RINCON DEL SALTARIN', NULL, 'Risaralda', '9308 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
-(68, 'Desarrollo de una herramienta tecnológica de apoyo a la gestión de la información administrativa y comercial de la ANUC-Floridablanca', NULL, 'Santander', '9225 - Centro Industrial del Diseño y la Manufactura', '2025-10-30 19:11:13'),
+(66, 'Incubadora y Nacedora de huevos con rotación automática Centro Agropecuario SENA - Risaralda', 'Poster y Prototipo', 'Risaralda', '9121 - Centro Atención Sector Agropecuario', '2025-10-30 19:11:13'),
+(67, 'EL RINCON DEL SALTARIN', 'Stand', 'Risaralda', '9308 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(68, 'Desarrollo de una herramienta tecnológica de apoyo a la gestión de la información administrativa y comercial de la ANUC-Floridablanca', 'Cartel o Poster', 'Santander', '9225 - Centro Industrial del Diseño y la Manufactura', '2025-10-30 19:11:13'),
 (69, 'XERIDAS Y ANCESTRALIDAD. LA RUTA PARA RECONECTAR PROYECTO XERIDAS', NULL, 'Santander', '9309 - Centro de Servicios Empresariales y Turísticos', '2025-10-30 19:11:13'),
-(70, 'Fortalecimiento de competencias de gestión contable y financiera para emprendedores de economía popular en Bucaramanga', NULL, 'Santander', '9309 - Centro de Servicios Empresariales y Turísticos', '2025-10-30 19:11:13'),
-(71, 'Caracterización de las razas machos ovinos en el páramo del almorzadero provincia García Rovira Santander', NULL, 'Santander', '9545 - Centro Agroempresarial y Turístico de los Andes', '2025-10-30 19:11:13'),
-(72, 'Caracterización del cultivo de tomate bajo invernadero a través de imágenes satelitales en el municipio de Málaga Santander', NULL, 'Santander', '9545 - Centro Agroempresarial y Turístico de los Andes', '2025-10-30 19:11:13'),
-(73, 'Protección de las variedades de semillas de maiz nativo en el sur del Tolima', NULL, 'Tolima', '9123 - Centro Agropecuario la Granja', '2025-10-30 19:11:13'),
-(74, 'Diseño del plan de marketing internacional para dos pymes de la ciudad de Ibagué.', NULL, 'Tolima', '9310 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
+(70, 'Fortalecimiento de competencias de gestión contable y financiera para emprendedores de economía popular en Bucaramanga', 'Cartel o Poster', 'Santander', '9309 - Centro de Servicios Empresariales y Turísticos', '2025-10-30 19:11:13'),
+(71, 'Caracterización de las razas machos ovinos en el páramo del almorzadero provincia García Rovira Santander', 'Cartel o Poster', 'Santander', '9545 - Centro Agroempresarial y Turístico de los Andes', '2025-10-30 19:11:13'),
+(72, 'Caracterización del cultivo de tomate bajo invernadero a través de imágenes satelitales en el municipio de Málaga Santander', 'Cartel o Poster', 'Santander', '9545 - Centro Agroempresarial y Turístico de los Andes', '2025-10-30 19:11:13'),
+(73, 'Protección de las variedades de semillas de maiz nativo en el sur del Tolima', 'Cartel o Poster', 'Tolima', '9123 - Centro Agropecuario la Granja', '2025-10-30 19:11:13'),
+(74, 'Diseño del plan de marketing internacional para dos pymes de la ciudad de Ibagué.', 'Cartel o Poster', 'Tolima', '9310 - Centro de Comercio y Servicios', '2025-10-30 19:11:13'),
 (75, 'Prácticas campesinas en la produccion de papa criolla y carne de cuy para la soberania alimentaria familiar en la zona rural de Porto Bello', NULL, 'Valle', '9125 - Centro Latinoamericano de Especies Menores', '2025-10-30 19:11:13'),
-(76, 'Implementación de una Metodología Integral de Intervención para el Desarrollo Participativo de Hábitats Rurales Productivos de la Región del Pacífico Colombiano, en el marco de los objetivos de desarrollo sostenible. (Fase I)', NULL, 'Valle', '9228 - Centro de la Construcción', '2025-10-30 19:11:13'),
-(77, 'Efectos organizativos en comunidades urbanas por implementación del Piloto \"Formación profesional integral para fortalecimiento economías populares urbanas Valle del Cauca\"', NULL, 'Valle', '9311 - Centro de Gestión Tecnológica de Servicios', '2025-10-30 19:11:13'),
+(76, 'Implementación de una Metodología Integral de Intervención para el Desarrollo Participativo de Hábitats Rurales Productivos de la Región del Pacífico Colombiano, en el marco de los objetivos de desarrollo sostenible. (Fase I)', 'Cartel o Poster', 'Valle', '9228 - Centro de la Construcción', '2025-10-30 19:11:13'),
+(77, 'Efectos organizativos en comunidades urbanas por implementación del Piloto \"Formación profesional integral para fortalecimiento economías populares urbanas Valle del Cauca\"', 'Ponencia', 'Valle', '9311 - Centro de Gestión Tecnológica de Servicios', '2025-10-30 19:11:13'),
 (78, 'Asistencia técnica para el desarrollo sustentable y económico de redes de mujeres comunales y rurales, Cali 2024.', NULL, 'Valle', '9311 - Centro de Gestión Tecnológica de Servicios', '2025-10-30 19:11:13'),
-(79, 'Impacto económico de la incorporación de café de alta calidad en la comercialización ambulante de la bebida bajo el marco de la economía popular en el norte del Valle del Cauca', NULL, 'Valle', '9543 - Centro de Tecnologías Agroindustriales', '2025-10-30 19:11:13'),
-(80, 'Diseño del plan operativo para la cadena de suministro de la empresa Jireth en la ciudad de Palmira', NULL, 'Valle', '9544 - Centro de Biotecnología Industrial', '2025-10-30 19:11:13'),
-(81, 'Panorama de la Economía Popular en Colombia', NULL, 'Valle', '9544 - Centro de Biotecnología Industrial', '2025-10-30 19:11:13'),
-(82, 'Optimización del plan de gestión integral de residuos sólidos en el Centro Acuícola y Agroindustrial de Gaira.', NULL, 'Magdalena', '9118 - Centro Acuícola y Agroindustrial de Gaira', '2025-10-30 19:11:13'),
-(83, 'Prototipo de Biodigestor de Recursos Hídricos.', NULL, 'Magdalena', '9118 - Centro Acuícola y Agroindustrial de Gaira', '2025-10-30 19:11:13'),
+(79, 'Impacto económico de la incorporación de café de alta calidad en la comercialización ambulante de la bebida bajo el marco de la economía popular en el norte del Valle del Cauca', 'Cartel o Poster', 'Valle', '9543 - Centro de Tecnologías Agroindustriales', '2025-10-30 19:11:13'),
+(80, 'Diseño del plan operativo para la cadena de suministro de la empresa Jireth en la ciudad de Palmira', 'Ponencia', 'Valle', '9544 - Centro de Biotecnología Industrial', '2025-10-30 19:11:13'),
+(81, 'Panorama de la Economía Popular en Colombia', 'Ponencia', 'Valle', '9544 - Centro de Biotecnología Industrial', '2025-10-30 19:11:13'),
+(82, 'Optimización del plan de gestión integral de residuos sólidos en el Centro Acuícola y Agroindustrial de Gaira.', 'Cartel o Poster', 'Magdalena', '9118 - Centro Acuícola y Agroindustrial de Gaira', '2025-10-30 19:11:13'),
+(83, 'Prototipo de Biodigestor de Recursos Hídricos.', 'Cartel o Poster', 'Magdalena', '9118 - Centro Acuícola y Agroindustrial de Gaira', '2025-10-30 19:11:13'),
 (84, 'Caracterización de residuos sólidos en el Río Manzanares en la ciudad de Santa Marta', NULL, 'Magdalena', '9118 - Centro Acuícola y Agroindustrial de Gaira', '2025-10-30 19:11:13');
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `vista_exportacion_excel`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `vista_exportacion_excel` (
-);
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vista_exportacion_excel`
---
-DROP TABLE IF EXISTS `vista_exportacion_excel`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_exportacion_excel`  AS SELECT `p`.`nombre_proyecto` AS `Proyecto`, `e`.`nombre` AS `Evaluador`, `c`.`dominio_tematico` AS `dominio_tematico`, `c`.`formato_poster` AS `formato_poster`, `c`.`creatividad_diseno` AS `creatividad_diseno`, `c`.`introduccion` AS `introduccion`, `c`.`planteamiento_problema` AS `planteamiento_problema`, `c`.`objetivos` AS `objetivos`, `c`.`total` AS `Total Final`, `p`.`regional` AS `regional`, `p`.`centro_formacion` AS `centro_formacion`, `p`.`estado` AS `estado` FROM (((`calificaciones` `c` join `asignaciones` `a` on(`c`.`id_asignacion` = `a`.`id_asignacion`)) join `evaluadores` `e` on(`a`.`id_evaluador` = `e`.`id_evaluador`)) join `proyectos` `p` on(`a`.`id_proyecto` = `p`.`id_proyecto`)) ;
 
 --
 -- Índices para tablas volcadas
@@ -459,29 +449,13 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Indices de la tabla `asignaciones`
 --
 ALTER TABLE `asignaciones`
-  ADD PRIMARY KEY (`id_asignacion`),
-  ADD UNIQUE KEY `id_evaluador` (`id_evaluador`,`id_proyecto`),
-  ADD KEY `id_proyecto` (`id_proyecto`);
-
---
--- Indices de la tabla `calificaciones`
---
-ALTER TABLE `calificaciones`
-  ADD PRIMARY KEY (`id_calificacion`),
-  ADD KEY `id_asignacion` (`id_asignacion`);
+  ADD PRIMARY KEY (`id_asignacion`);
 
 --
 -- Indices de la tabla `evaluadores`
 --
 ALTER TABLE `evaluadores`
-  ADD PRIMARY KEY (`id_evaluador`),
-  ADD UNIQUE KEY `usuario` (`usuario`);
-
---
--- Indices de la tabla `proyectos`
---
-ALTER TABLE `proyectos`
-  ADD PRIMARY KEY (`id_proyecto`);
+  ADD PRIMARY KEY (`id_evaluador`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -491,42 +465,13 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT de la tabla `asignaciones`
 --
 ALTER TABLE `asignaciones`
-  MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
-
---
--- AUTO_INCREMENT de la tabla `calificaciones`
---
-ALTER TABLE `calificaciones`
-  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324;
 
 --
 -- AUTO_INCREMENT de la tabla `evaluadores`
 --
 ALTER TABLE `evaluadores`
-  MODIFY `id_evaluador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
-
---
--- AUTO_INCREMENT de la tabla `proyectos`
---
-ALTER TABLE `proyectos`
-  MODIFY `id_proyecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `asignaciones`
---
-ALTER TABLE `asignaciones`
-  ADD CONSTRAINT `asignaciones_ibfk_1` FOREIGN KEY (`id_evaluador`) REFERENCES `evaluadores` (`id_evaluador`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `asignaciones_ibfk_2` FOREIGN KEY (`id_proyecto`) REFERENCES `proyectos` (`id_proyecto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `calificaciones`
---
-ALTER TABLE `calificaciones`
-  ADD CONSTRAINT `calificaciones_ibfk_1` FOREIGN KEY (`id_asignacion`) REFERENCES `asignaciones` (`id_asignacion`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `id_evaluador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

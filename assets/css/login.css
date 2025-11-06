@@ -154,7 +154,7 @@ button:hover {
   font-weight: 700;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 480px) {
   .container { flex-direction: column; height: auto; }
   .event-section { height: 50vh; order: -1; }
 }

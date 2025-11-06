@@ -104,6 +104,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
   </script>
 
 </body>
+<?php include 'footer.php'; ?>
 </html>
 
 
