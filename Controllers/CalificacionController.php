@@ -19,12 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (
         empty($_POST["id_asignacion"]) ||
         empty($_POST["dominio_tematico"]) ||
-        empty($_POST["formato_poster"]) ||
         empty($_POST["creatividad_diseno"]) ||
-        empty($_POST["introduccion"]) ||
         empty($_POST["planteamiento_problema"]) ||
         empty($_POST["objetivos"]) ||
-        empty($_POST["referente_teorico"]) ||
+        empty($_POST["pertinencia_impacto"]) ||
         empty($_POST["metodologia"]) ||
         empty($_POST["resultados"]) ||
         empty($_POST["bibliografia"]) ||
@@ -36,34 +34,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Calcular total
     $total = (
-        $_POST["dominio_tematico"] +
-        $_POST["formato_poster"] +
-        $_POST["creatividad_diseno"] +
-        $_POST["introduccion"] +
-        $_POST["planteamiento_problema"] +
-        $_POST["objetivos"] +
-        $_POST["referente_teorico"] +
-        $_POST["metodologia"] +
-        $_POST["resultados"] +
-        $_POST["bibliografia"]
-    );
+    $_POST["dominio_tematico"] +
+    $_POST["creatividad_diseno"] +
+    $_POST["planteamiento_problema"] +
+    $_POST["objetivos"] +
+    $_POST["pertinencia_impacto"] +  
+    $_POST["metodologia"] +
+    $_POST["resultados"] +
+    $_POST["bibliografia"]
+);
 
-    // Datos a guardar
+
     $data = [
-        "id_asignacion" => $_POST["id_asignacion"],
-        "dominio_tematico" => $_POST["dominio_tematico"],
-        "formato_poster" => $_POST["formato_poster"],
-        "creatividad_diseno" => $_POST["creatividad_diseno"],
-        "introduccion" => $_POST["introduccion"],
-        "planteamiento_problema" => $_POST["planteamiento_problema"],
-        "objetivos" => $_POST["objetivos"],
-        "referente_teorico" => $_POST["referente_teorico"],
-        "metodologia" => $_POST["metodologia"],
-        "resultados" => $_POST["resultados"],
-        "bibliografia" => $_POST["bibliografia"],
-        "total" => $total,
-        "estado" => $_POST["estado_proyecto"]
-    ];
+    "id_asignacion" => $_POST["id_asignacion"],
+    "dominio_tematico" => $_POST["dominio_tematico"],
+    "creatividad_diseno" => $_POST["creatividad_diseno"],
+    "planteamiento_problema" => $_POST["planteamiento_problema"],
+    "objetivos" => $_POST["objetivos"],
+    "pertinencia_impacto" => $_POST["pertinencia_impacto"], 
+    "resultados" => $_POST["resultados"],
+    "bibliografia" => $_POST["bibliografia"],
+    "total" => $total,
+    "estado" => $_POST["estado_proyecto"]
+];
+
 
     // Guardar en base de datos
     if ($model->guardar($data)) {

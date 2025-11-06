@@ -15,8 +15,6 @@ class Database {
                 $this->password
             );
             $this->conn->exec("set names utf8");
-            // si no quieren el mensaje solo quiten esto no me jodan el codigo
-            echo "✅ Conexión exitosa a la base de datos.";
         } catch (PDOException $exception) {
             echo "❌ Error de conexión: " . $exception->getMessage();
         }
