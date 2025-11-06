@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2025 a las 03:14:04
+-- Tiempo de generación: 06-11-2025 a las 18:28:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -214,27 +214,26 @@ INSERT INTO `asignaciones` (`id_asignacion`, `id_evaluador`, `id_proyecto`, `fec
 CREATE TABLE `calificaciones` (
   `id_calificacion` int(11) NOT NULL,
   `id_asignacion` int(11) NOT NULL,
-  `dominio_tematico` decimal(4,2) DEFAULT NULL CHECK (`dominio_tematico` between 0 and 10),
-  `formato_poster` decimal(4,2) DEFAULT NULL CHECK (`formato_poster` between 0 and 10),
-  `creatividad_diseno` decimal(4,2) DEFAULT NULL CHECK (`creatividad_diseno` between 0 and 5),
-  `introduccion` decimal(4,2) DEFAULT NULL CHECK (`introduccion` between 0 and 10),
-  `planteamiento_problema` decimal(4,2) DEFAULT NULL CHECK (`planteamiento_problema` between 0 and 15),
-  `objetivos` decimal(4,2) DEFAULT NULL CHECK (`objetivos` between 0 and 10),
-  `referente_teorico` decimal(4,2) DEFAULT NULL,
-  `metodologia` decimal(4,2) DEFAULT NULL,
-  `resultados` decimal(4,2) DEFAULT NULL,
-  `bibliografia` decimal(4,2) DEFAULT NULL,
-  `total` decimal(5,2) GENERATED ALWAYS AS (`dominio_tematico` + `formato_poster` + `creatividad_diseno` + `introduccion` + `planteamiento_problema` + `objetivos`) STORED,
-  `estado` text DEFAULT NULL,
-  `fecha_calificacion` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `dominio_tematico` tinyint(4) NOT NULL,
+  `creatividad_diseno` tinyint(4) NOT NULL,
+  `planteamiento_problema` tinyint(4) NOT NULL,
+  `pertinencia_impacto` tinyint(4) NOT NULL,
+  `objetivos` tinyint(4) NOT NULL,
+  `metodologia` tinyint(4) NOT NULL,
+  `resultados` tinyint(4) NOT NULL,
+  `bibliografia` tinyint(4) NOT NULL,
+  `estado` varchar(80) DEFAULT NULL,
+  `fecha_calificacion` datetime DEFAULT current_timestamp(),
+  `total` int(11) DEFAULT NULL
+) ;
 
 --
 -- Volcado de datos para la tabla `calificaciones`
 --
 
-INSERT INTO `calificaciones` (`id_calificacion`, `id_asignacion`, `dominio_tematico`, `formato_poster`, `creatividad_diseno`, `introduccion`, `planteamiento_problema`, `objetivos`, `referente_teorico`, `metodologia`, `resultados`, `bibliografia`, `estado`, `fecha_calificacion`) VALUES
-(11, 2, 4.00, 4.00, 4.00, 4.00, 4.00, 4.00, 4.00, 4.00, 4.00, 4.00, 'En curso', '2025-11-03 02:01:00');
+INSERT INTO `calificaciones` (`id_calificacion`, `id_asignacion`, `dominio_tematico`, `creatividad_diseno`, `planteamiento_problema`, `pertinencia_impacto`, `objetivos`, `metodologia`, `resultados`, `bibliografia`, `estado`, `fecha_calificacion`, `total`) VALUES
+(1, 1, 10, 15, 15, 10, 10, 15, 20, 10, 'En curso', '2025-11-06 10:28:04', 105),
+(2, 157, 5, 5, 5, 5, 5, 5, 5, 5, 'En curso', '2025-11-06 10:30:55', 40);
 
 -- --------------------------------------------------------
 
@@ -452,6 +451,13 @@ ALTER TABLE `asignaciones`
   ADD PRIMARY KEY (`id_asignacion`);
 
 --
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD PRIMARY KEY (`id_calificacion`),
+  ADD KEY `fk_calificaciones_asignacion` (`id_asignacion`);
+
+--
 -- Indices de la tabla `evaluadores`
 --
 ALTER TABLE `evaluadores`
@@ -468,10 +474,26 @@ ALTER TABLE `asignaciones`
   MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324;
 
 --
+-- AUTO_INCREMENT de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `evaluadores`
 --
 ALTER TABLE `evaluadores`
   MODIFY `id_evaluador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD CONSTRAINT `fk_calificaciones_asignacion` FOREIGN KEY (`id_asignacion`) REFERENCES `asignaciones` (`id_asignacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
