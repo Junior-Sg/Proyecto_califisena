@@ -103,19 +103,19 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
   <script>
   function confirmarLogout() {
     Swal.fire({
-      title: '¿Desea cerrar sesión?',
-      text: "Tu sesión se cerrará y volverás al inicio de sesión.",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Sí, cerrar sesión',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "../Controllers/logout.php";
-      }
-    });
+         title: '¿Desea cerrar sesión?',
+         text: "Tu sesión se cerrará y volverás al inicio de sesión.",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#d33',
+         cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, cerrar sesión',
+         cancelButtonText: 'Cancelar',
+         width: '90%',
+         customClass: {
+         popup: 'swal-responsive'
+     }
+   });
   }
   </script>
 

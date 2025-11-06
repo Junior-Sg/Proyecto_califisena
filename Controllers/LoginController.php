@@ -16,15 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($evaluador) {
         $_SESSION["id_evaluador"] = $evaluador["id_evaluador"];
         $_SESSION["nombre"] = $evaluador["nombre"];
-        header("Location: ../Views/calificar.php");
+
+        // 🔥 REDIRECCIÓN SEGÚN ID
+        if ($evaluador["id_evaluador"] == 76) {
+            header("Location: ../Views/Admin/index.php");
+        } else {
+            header("Location: ../Views/calificar.php");
+        }
         exit;
+
     } else {
         echo "<script>alert('Usuario o contraseña incorrectos'); window.location='../Views/login.php';</script>";
     }
 }
 ?>
-
-
-
-
-
