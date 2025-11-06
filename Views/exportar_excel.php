@@ -13,8 +13,8 @@ if (isset($_GET["id_proyecto"])) {
     $params[":id_proyecto"] = $_GET["id_proyecto"];
     $modo = "proyecto";
 
-} elseif (isset($_GET["id_evaluador"]) && $_GET["id_evaluador"] == 75) {
-    // Exportar todo (solo admin evaluador 75)
+} elseif (isset($_GET["id_evaluador"]) && $_GET["id_evaluador"] == 76) {
+    // Exportar todo (solo admin evaluador 76)
     $modo = "todos";
 
 } else {
