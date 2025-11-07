@@ -94,7 +94,14 @@ button:hover, .btn:hover {
   margin-top: 15px;
   border-radius: 10px;
   position: relative;
+
+  scrollbar-width: none;
 }
+
+.table-responsive::-webkit-scrollbar {
+  display: none; 
+}
+
 
 /* sombra sutil al hacer scroll */
 .table-responsive::after {

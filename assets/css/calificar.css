@@ -1,3 +1,8 @@
+/* === OCULTAR FORMULARIO POR DEFECTO === */
+#form-ponencia {
+  display: none;
+}
+
 /* === ESTILO GENERAL === */
 body {
   font-family: "Poppins", sans-serif;
@@ -16,6 +21,7 @@ body {
 /* === CONTENEDOR PRINCIPAL === */
 .calificar-container {
   max-width: 720px;
+  width: 90%;
   margin: 110px auto 60px;
   background: #fffefb;
   backdrop-filter: blur(6px);
@@ -25,11 +31,72 @@ body {
   border: 1px solid #e4decf;
   position: relative;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .calificar-container:hover {
   box-shadow: 0 10px 30px rgba(60, 90, 60, 0.18);
   transform: translateY(-3px);
+}
+
+/* === SELECT DE PROYECTOS (arreglo principal) === */
+.select-project {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1px solid #c7c7b5;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fdfcf7;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #4caf50 50%),
+                    linear-gradient(135deg, #4caf50 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+                       calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.select-project option {
+  white-space: normal; /* Permite varias líneas en el desplegable */
+  word-break: break-word;
+}
+
+form select:focus,
+.select-project:focus {
+  outline: none;
+  border-color: #4caf50;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* === FORMULARIOS === */
+.form-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border: 1px solid #e9ecef;
+}
+
+/* === GRID === */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-full-width {
+  grid-column: 1 / -1;
 }
 
 /* === LABELS === */
@@ -41,7 +108,7 @@ form label {
   font-size: 15px;
 }
 
-/* === INPUTS Y SELECTS === */
+/* === INPUTS === */
 form input[type="number"],
 form select {
   width: 100%;
@@ -52,6 +119,7 @@ form select {
   font-size: 15px;
   background-color: #fdfcf7;
   transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
 form input:focus,
@@ -63,7 +131,8 @@ form select:focus {
 }
 
 /* === BOTÓN PRINCIPAL === */
-form button {
+form button,
+.btn-submit {
   width: 100%;
   margin-top: 35px;
   padding: 14px;
@@ -78,7 +147,8 @@ form button {
   transition: all 0.3s ease;
 }
 
-form button:hover {
+form button:hover,
+.btn-submit:hover {
   background: linear-gradient(90deg, #2f7a49, #25663c);
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(58, 158, 94, 0.35);
@@ -134,10 +204,16 @@ form button:hover {
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .calificar-container {
     padding: 25px;
-    margin: 100px 15px;
+    margin: 80px 15px;
+  }
+
+  .select-project {
+    font-size: 14px;
+    white-space: normal; /* Permite ver todo el texto largo */
+    word-break: break-word;
   }
 
   form button {

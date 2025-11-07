@@ -21,7 +21,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
+  <!-- <style>
     #form-ponencia { display: none; }
     /* Mejoras visuales para los formularios */
     .form-section {
@@ -65,7 +65,7 @@ $proyectos = $proyectoModel->listarPorEvaluador($_SESSION["id_evaluador"]);
       font-size: 14px;
       margin-bottom: 20px;
     }
-  </style>
+  </style> -->
 </head>
 <body>
 

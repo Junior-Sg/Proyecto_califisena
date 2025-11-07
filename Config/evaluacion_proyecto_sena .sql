@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2025 a las 22:53:34
+-- Tiempo de generación: 07-11-2025 a las 18:27:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -226,6 +226,74 @@ CREATE TABLE `calificaciones` (
   `fecha_calificacion` datetime DEFAULT current_timestamp(),
   `total` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `calificaciones`
+--
+
+INSERT INTO `calificaciones` (`id_calificacion`, `id_asignacion`, `dominio_tematico`, `creatividad_diseno`, `planteamiento_problema`, `pertinencia_impacto`, `objetivos`, `metodologia`, `resultados`, `bibliografia`, `estado`, `fecha_calificacion`, `total`) VALUES
+(5, 123, 10, 15, 15, 10, 10, 15, 20, 10, 'En curso', '2025-11-06 22:05:01', 105),
+(6, 1, 4, 4, 5, 4, 4, 4, 5, 3, 'Evaluado', '2025-11-06 23:12:58', 33),
+(7, 2, 3, 4, 4, 3, 4, 3, 4, 3, 'Evaluado', '2025-11-06 23:12:58', 28),
+(8, 4, 5, 5, 5, 5, 5, 5, 4, 4, 'Evaluado', '2025-11-06 23:12:58', 38),
+(9, 5, 4, 3, 4, 4, 3, 4, 4, 3, 'Evaluado', '2025-11-06 23:12:58', 29),
+(10, 7, 3, 4, 3, 3, 4, 3, 3, 3, 'Evaluado', '2025-11-06 23:12:58', 26),
+(11, 9, 4, 4, 3, 4, 4, 3, 4, 4, 'Evaluado', '2025-11-06 23:12:58', 30),
+(12, 11, 5, 4, 5, 5, 4, 4, 4, 4, 'Evaluado', '2025-11-06 23:12:58', 35),
+(13, 13, 3, 3, 4, 3, 4, 3, 3, 2, 'Evaluado', '2025-11-06 23:12:58', 25),
+(14, 16, 4, 4, 4, 4, 4, 4, 4, 4, 'Evaluado', '2025-11-06 23:12:58', 32),
+(15, 19, 2, 3, 3, 3, 3, 3, 2, 3, 'Evaluado', '2025-11-06 23:12:58', 22),
+(16, 156, 9, 13, 14, 10, 9, 13, 16, 9, 'En curso', '2025-11-06 12:05:00', 93),
+(17, 17, 10, 14, 15, 9, 10, 14, 18, 10, 'En curso', '2025-11-06 12:10:00', 100),
+(18, 42, 9, 15, 13, 10, 9, 15, 17, 9, 'En curso', '2025-11-06 12:15:00', 97),
+(19, 47, 8, 12, 13, 9, 8, 12, 15, 8, 'En curso', '2025-11-06 23:31:08', 85),
+(20, 127, 9, 14, 14, 10, 9, 14, 17, 9, 'En curso', '2025-11-06 23:31:08', 96),
+(21, 139, 10, 15, 15, 10, 10, 15, 18, 10, 'En curso', '2025-11-06 23:31:08', 103),
+(22, 67, 10, 6, 6, 6, 6, 6, 6, 6, 'En curso', '2025-11-06 23:52:04', 52);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones_ponencia`
+--
+
+CREATE TABLE `calificaciones_ponencia` (
+  `id_calificacion_ponencia` int(11) NOT NULL,
+  `id_asignacion` int(11) NOT NULL,
+  `pon_titulo_presentacion` int(11) NOT NULL,
+  `pon_planteamiento_justificacion` int(11) NOT NULL,
+  `pon_objetivos` int(11) NOT NULL,
+  `pon_marco_teorico` int(11) NOT NULL,
+  `pon_metodologia` int(11) NOT NULL,
+  `pon_resultados_analisis` int(11) NOT NULL,
+  `pon_conclusiones_aportes` int(11) NOT NULL,
+  `pon_impacto_aplicabilidad` int(11) NOT NULL,
+  `pon_innovacion_creatividad` int(11) NOT NULL,
+  `pon_presentacion_oral` int(11) NOT NULL,
+  `pon_manejo_publico` int(11) NOT NULL,
+  `pon_apoyo_visual` int(11) NOT NULL,
+  `pon_total` int(11) NOT NULL,
+  `pon_estado` varchar(50) NOT NULL,
+  `fecha_calificacion` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `calificaciones_ponencia`
+--
+
+INSERT INTO `calificaciones_ponencia` (`id_calificacion_ponencia`, `id_asignacion`, `pon_titulo_presentacion`, `pon_planteamiento_justificacion`, `pon_objetivos`, `pon_marco_teorico`, `pon_metodologia`, `pon_resultados_analisis`, `pon_conclusiones_aportes`, `pon_impacto_aplicabilidad`, `pon_innovacion_creatividad`, `pon_presentacion_oral`, `pon_manejo_publico`, `pon_apoyo_visual`, `pon_total`, `pon_estado`, `fecha_calificacion`) VALUES
+(2, 124, 5, 10, 5, 5, 10, 10, 5, 10, 10, 10, 10, 5, 95, 'En curso', '2025-11-07 03:04:32'),
+(3, 23, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 48, 'Evaluado', '2025-11-07 04:13:26'),
+(4, 24, 3, 4, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 40, 'Evaluado', '2025-11-07 04:13:26'),
+(5, 25, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 4, 5, 58, 'Evaluado', '2025-11-07 04:13:26'),
+(6, 26, 3, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 39, 'Evaluado', '2025-11-07 04:13:26'),
+(7, 28, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 47, 'Evaluado', '2025-11-07 04:13:26'),
+(8, 40, 5, 4, 5, 4, 4, 5, 4, 5, 5, 4, 5, 4, 54, 'Evaluado', '2025-11-07 04:13:26'),
+(9, 54, 3, 4, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 39, 'Evaluado', '2025-11-07 04:13:26'),
+(10, 62, 4, 4, 5, 4, 4, 4, 5, 5, 4, 4, 4, 4, 50, 'Evaluado', '2025-11-07 04:13:26'),
+(11, 77, 5, 5, 4, 5, 5, 5, 5, 5, 4, 5, 5, 5, 58, 'Evaluado', '2025-11-07 04:13:26'),
+(12, 80, 4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 3, 43, 'Evaluado', '2025-11-07 04:13:26'),
+(13, 146, 5, 10, 5, 5, 10, 10, 5, 10, 10, 10, 10, 5, 95, 'En curso', '2025-11-07 04:49:05');
 
 -- --------------------------------------------------------
 
@@ -450,6 +518,13 @@ ALTER TABLE `calificaciones`
   ADD KEY `fk_calificaciones_asignacion` (`id_asignacion`);
 
 --
+-- Indices de la tabla `calificaciones_ponencia`
+--
+ALTER TABLE `calificaciones_ponencia`
+  ADD PRIMARY KEY (`id_calificacion_ponencia`),
+  ADD KEY `id_asignacion` (`id_asignacion`);
+
+--
 -- Indices de la tabla `evaluadores`
 --
 ALTER TABLE `evaluadores`
@@ -469,7 +544,13 @@ ALTER TABLE `asignaciones`
 -- AUTO_INCREMENT de la tabla `calificaciones`
 --
 ALTER TABLE `calificaciones`
-  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `calificaciones_ponencia`
+--
+ALTER TABLE `calificaciones_ponencia`
+  MODIFY `id_calificacion_ponencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `evaluadores`
@@ -486,6 +567,12 @@ ALTER TABLE `evaluadores`
 --
 ALTER TABLE `calificaciones`
   ADD CONSTRAINT `fk_calificaciones_asignacion` FOREIGN KEY (`id_asignacion`) REFERENCES `asignaciones` (`id_asignacion`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `calificaciones_ponencia`
+--
+ALTER TABLE `calificaciones_ponencia`
+  ADD CONSTRAINT `calificaciones_ponencia_ibfk_1` FOREIGN KEY (`id_asignacion`) REFERENCES `asignaciones` (`id_asignacion`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
