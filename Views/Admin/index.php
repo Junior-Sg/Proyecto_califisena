@@ -38,6 +38,9 @@ if (!isset($_SESSION["id_evaluador"]) || $_SESSION["id_evaluador"] != 76) {
       <a href="../../Controllers/exportar_todo.php" class="btn" style="background:#146531;">
         📥 Exportar Todas las Calificaciones
       </a>
+      <a href="../../Controllers/ExportarPoster.php" class="btn" style="background:#146531;">
+        📥 Exportar Todas las Calificaciones ponencia
+      </a>
 
       <!-- Cerrar sesión -->
       <a href="../../Controllers/logout.php" class="btn" style="background:#a33;">

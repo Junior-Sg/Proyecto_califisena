@@ -86,7 +86,7 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
                 <?php endif; ?>
               </td>
               <td>
-                <a href="exportar_excel.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
+                <a href="../Controllers/ExportController.php?id_proyecto=<?php echo $p['id_proyecto']; ?>" title="Exportar solo este proyecto">
                   <i class="fa-solid fa-file-excel" style="color:#1d6f42; font-size:20px;"></i>
                 </a>
               </td>
@@ -100,7 +100,6 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
 
     <div class="actions">
       <a href="calificar.php" class="btn">Volver a Calificar</a>
-      <a href="exportar_excel.php?id_evaluador=<?php echo $_SESSION['id_evaluador']; ?>" class="btn">Exportar Todo</a>
     </div>
   </div>
 
@@ -114,13 +113,13 @@ $proyectos = $proyectoModel->listarTodosPorEvaluador($_SESSION["id_evaluador"]);
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, cerrar sesión',
-      cancelButtonText: 'Cancelar',
-      width: '90%',
-      customClass: {
-        popup: 'swal-responsive'
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "../Controllers/logout.php";
       }
     });
-  }
+}
   </script>
 
 </body>
